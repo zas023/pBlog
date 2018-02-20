@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -16,6 +15,7 @@
     <meta name="applicable-device" content="pc,mobile">
     <meta name="MobileOptimized" content="width"/>
     <meta name="HandheldFriendly" content="true"/>
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <link rel="shortcut icon" href="/img/logo.png">
     <rapid:block name="description">
         <meta name="description" content="${options.optionMetaDescrption}" />

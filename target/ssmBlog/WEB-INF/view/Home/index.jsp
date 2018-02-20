@@ -4,61 +4,70 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="/WEB-INF/myTag.tld" prefix="lyz" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
+<%--顶部通知栏--%>
+<rapid:override name="breadcrumb">
+    <nav class="breadcrumb">
+        <div class="bull"><i class="fa fa-volume-up"></i></div>
+        <div id="scrolldiv">
+            <div class="scrolltext">
+                <ul style="margin-top: 0px;">
+                    <c:forEach items="${noticeCustomList}" var="n">
+                        <li class="scrolltext-title">
+                            <a href="/notice/${n.noticeId}" rel="bookmark">${n.noticeTitle}</a>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</rapid:override>
+<%-- 内容--%>
+<rapid:override name="left">
+    <div id="primary" class="content-area">
 
-    <rapid:override name="breadcrumb">
-        <nav class="breadcrumb">
-            <div class="bull"><i class="fa fa-volume-up"></i></div>
-            <div id="scrolldiv">
-                <div class="scrolltext">
-                    <ul style="margin-top: 0px;">
-                        <c:forEach items="${noticeCustomList}" var="n">
-                            <li class="scrolltext-title">
-                                <a href="/notice/${n.noticeId}" rel="bookmark">${n.noticeTitle}</a>
-                            </li>
-                        </c:forEach>
-                    </ul>
+        <main id="main" class="site-main" role="main">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
+                    <div>条目1</div>
+                    <div>条目2</div>
+                    <div>条目3</div>
+                    <div>条目4</div>
+                    <div>条目5</div>
                 </div>
             </div>
-        </nav>
-    </rapid:override>
+            <c:forEach items="${articleListVoList}" var="a">
 
-    <rapid:override name="left">
-        <div id="primary" class="content-area">
+                <article class="post type-post">
 
-            <main id="main" class="site-main" role="main">
-                <c:forEach items="${articleListVoList}" var="a">
-
-                    <article  class="post type-post">
-
-                        <figure class="thumbnail">
-                            <a href="/article/${a.articleCustom.articleId}">
-                                <img width="280" height="210"
-                                     src="/img/thumbnail/random/img_${a.articleCustom.articleId%400}.jpg"
-                                     class="attachment-content size-content wp-post-image"
-                                     alt="${a.articleCustom.articleTitle}">
-                            </a>
-                            <span class="cat">
+                    <figure class="thumbnail">
+                        <a href="/article/${a.articleCustom.articleId}">
+                            <img width="280" height="210"
+                                 src="/img/thumbnail/random/img_${a.articleCustom.articleId%400}.jpg"
+                                 class="attachment-content size-content wp-post-image"
+                                 alt="${a.articleCustom.articleTitle}">
+                        </a>
+                        <span class="cat">
                                 <a href="/category/${a.categoryCustomList[a.categoryCustomList.size()-1].categoryId}">
                                         ${a.categoryCustomList[a.categoryCustomList.size()-1].categoryName}
                                 </a>
                             </span>
-                        </figure>
+                    </figure>
 
-                        <header class="entry-header">
-                            <h2 class="entry-title">
-                                <a href="/article/${a.articleCustom.articleId}"
-                                   rel="bookmark">
-                                        ${a.articleCustom.articleTitle}
-                                </a>
-                            </h2>
-                        </header>
+                    <header class="entry-header">
+                        <h2 class="entry-title">
+                            <a href="/article/${a.articleCustom.articleId}"
+                               rel="bookmark">
+                                    ${a.articleCustom.articleTitle}
+                            </a>
+                        </h2>
+                    </header>
 
-                        <div class="entry-content">
-                            <div class="archive-content">
-                                <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
-                            </div>
-                            <span class="title-l"></span>
-                            <span class="new-icon">
+                    <div class="entry-content">
+                        <div class="archive-content">
+                            <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
+                        </div>
+                        <span class="title-l"></span>
+                        <span class="new-icon">
                                     <c:choose>
                                         <c:when test="${a.articleCustom.articleStatus==2}">
                                             <i class="fa fa-bookmark-o"></i>
@@ -75,9 +84,10 @@
 
 
                                 </span>
-                            <span class="entry-meta">
+                        <span class="entry-meta">
                                     <span class="date">
-                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
+                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}"
+                                                        pattern="yyyy年MM月dd日"/>
                                     &nbsp;&nbsp;
                                     </span>
                                     <span class="views">
@@ -85,7 +95,8 @@
                                             ${a.articleCustom.articleViewCount} views
                                     </span>
                                     <span class="comment">&nbsp;&nbsp;
-                                        <a href="/article/${a.articleCustom.articleId}#comments" rel="external nofollow">
+                                        <a href="/article/${a.articleCustom.articleId}#comments"
+                                           rel="external nofollow">
                                           <i class="fa fa-comment-o"></i>
                                             <c:choose>
                                                 <c:when test="${a.articleCustom.articleCommentCount==0}">
@@ -99,20 +110,20 @@
                                         </a>
                                     </span>
                                 </span>
-                            <div class="clear"></div>
-                        </div><!-- .entry-content -->
+                        <div class="clear"></div>
+                    </div><!-- .entry-content -->
 
-                        <span class="entry-more">
+                    <span class="entry-more">
                                 <a href="/article/${a.articleCustom.articleId}"
                                    rel="bookmark">
                                     阅读全文
                                 </a>
                             </span>
-                    </article>
-                </c:forEach>
-            </main>
+                </article>
+            </c:forEach>
+        </main>
 
-            <c:if test="${articleListVoList[0].page.totalPageCount>1}">
+        <c:if test="${articleListVoList[0].page.totalPageCount>1}">
             <nav class="navigation pagination" role="navigation">
                 <div class="nav-links">
                     <c:choose>
@@ -139,7 +150,7 @@
                             <%--当前页为第一页，隐藏上一页按钮--%>
                         </c:when>
                         <c:otherwise>
-                            <a class="page-numbers" href="/p/${articleListVoList[0].page.pageNow-1}" >
+                            <a class="page-numbers" href="/p/${articleListVoList[0].page.pageNow-1}">
                                 <span class="fa fa-angle-left"></span>
                             </a>
                         </c:otherwise>
@@ -156,10 +167,10 @@
                     <c:forEach begin="${begin }" end="${end }" var="i">
                         <c:choose>
                             <c:when test="${i eq articleListVoList[0].page.pageNow }">
-                                <a class="page-numbers current" >${i}</a>
+                                <a class="page-numbers current">${i}</a>
                             </c:when>
                             <c:otherwise>
-                                <a  class="page-numbers" href="/p/${i}">${i }</a>
+                                <a class="page-numbers" href="/p/${i}">${i }</a>
                             </c:otherwise>
                         </c:choose>
                     </c:forEach>
@@ -187,35 +198,35 @@
 
                 </div>
             </nav>
-                <%--分页 end--%>
-            </c:if>
-        </div>
-    </rapid:override>
-    <%--左侧区域 end--%>
+            <%--分页 end--%>
+        </c:if>
+    </div>
+</rapid:override>
+<%--左侧区域 end--%>
 
-    <%--侧边栏 start--%>
-    <rapid:override name="right">
-        <%@include file="Public/part/sidebar-2.jsp" %>
-    </rapid:override>
-    <%--侧边栏 end--%>
+<%--侧边栏 start--%>
+<rapid:override name="right">
+    <%@include file="Public/part/sidebar-2.jsp" %>
+</rapid:override>
+<%--侧边栏 end--%>
 
-    <%--友情链接 start--%>
-    <rapid:override name="link">
-        <div class="links-box">
-            <div id="links">
-                <c:forEach items="${linkCustomList}" var="l">
-                    <ul class="lx7">
-                        <li class="link-f link-name">
-                            <a href="${l.linkUrl}" target="_blank">
-                                    ${l.linkName}
-                            </a>
-                        </li>
-                    </ul>
-                </c:forEach>
-                <div class="clear"></div>
-            </div>
+<%--友情链接 start--%>
+<rapid:override name="link">
+    <div class="links-box">
+        <div id="links">
+            <c:forEach items="${linkCustomList}" var="l">
+                <ul class="lx7">
+                    <li class="link-f link-name">
+                        <a href="${l.linkUrl}" target="_blank">
+                                ${l.linkName}
+                        </a>
+                    </li>
+                </ul>
+            </c:forEach>
+            <div class="clear"></div>
         </div>
-    </rapid:override>
-    <%--友情链接 end--%>
+    </div>
+</rapid:override>
+<%--友情链接 end--%>
 
 <%@ include file="Public/framework.jsp" %>

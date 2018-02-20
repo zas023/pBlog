@@ -9,10 +9,5 @@
         <body-content>scriptless</body-content>
     </tag>
 
-    <!--<tag>-->
-        <!--<name>htmlFilter</name>-->
-        <!--<tag-class>com.copasso.blog.util.HtmlFilterTag</tag-class>-->
-        <!--<body-content>scriptless</body-content>-->
-    <!--</tag>-->
 </taglib>
 

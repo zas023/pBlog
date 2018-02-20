@@ -15,7 +15,7 @@
 
 
     <!--加载db.properties-->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:jdbc.properties,classpath:"/>
 
     <!--配置druid连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
