@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32a3925c-7dfe-4c2a-808d-d0fb5c835464" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/UploadFileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/UploadFileController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Article/edit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Article/edit.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Article/insert.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Admin/Article/insert.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Home/Page/articleDetail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Home/Page/articleDetail.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/public/test.html" afterPath="$PROJECT_DIR$/src/main/webapp/public/test.html" />
-    </list>
+    <list default="true" id="32a3925c-7dfe-4c2a-808d-d0fb5c835464" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,8 +62,8 @@
       <file leaf-file-name="articleDetail.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Home/Page/articleDetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11716">
-              <caret line="517" column="21" lean-forward="false" selection-start-line="517" selection-start-column="4" selection-end-line="517" selection-end-column="21" />
+            <state relative-caret-position="9">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -643,16 +637,15 @@
       <workItem from="1518964437268" duration="4231000" />
       <workItem from="1519005769425" duration="7829000" />
       <workItem from="1519045447144" duration="7938000" />
-      <workItem from="1519191854790" duration="19021000" />
+      <workItem from="1519191854790" duration="19090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65202000" />
+    <option name="totallyTimeSpent" value="65271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -665,7 +658,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1123,8 +1116,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/Home/Page/articleDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11716">
-          <caret line="517" column="21" lean-forward="false" selection-start-line="517" selection-start-column="4" selection-end-line="517" selection-end-column="21" />
+        <state relative-caret-position="9">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding />
         </state>
       </provider>
