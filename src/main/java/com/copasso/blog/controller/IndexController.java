@@ -50,11 +50,16 @@ public class IndexController{
 		modelAndView.setViewName("/Home/index");
 		return modelAndView;
 	}
-	
-	//文章分页显示
+
+	/**
+	 * 文章分页显示
+	 * @param pageNow
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("p/{pageNow}")
-	//适合RESTful
-	public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{
+	@ResponseBody
+	public  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示的数量
 		int pageSize = 10;

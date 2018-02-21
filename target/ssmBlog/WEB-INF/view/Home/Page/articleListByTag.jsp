@@ -1,69 +1,73 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="/WEB-INF/myTag.tld" prefix="lyz" %>
-<%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
+<%@ taglib uri="/WEB-INF/myTag.tld" prefix="tag" %>
 
-    <rapid:override name="description">
-        <meta name="description" content="${tagCustom.tagName}"/>
-    </rapid:override>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="shortcut icon" href="/img/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
 
-    <rapid:override name="keywords">
-        <meta name="keywords" content="${tagCustom.tagName}"/>
-    </rapid:override>
+    <meta name="description" content="${tagCustom.tagName}"/>
+    <meta name="keywords" content="${tagCustom.tagName}"/>
+    <title>${tagCustom.tagName}</title>
 
-    <rapid:override name="title">
-        <title>${tagCustom.tagName}</title>
-    </rapid:override>
+</head>
+<body>
+<div id="page" class="site" style="transform: none;">
 
-    <rapid:override name="breadcrumb">
-        <%--面包屑导航 start--%>
-        <nav class="breadcrumb">
-            <a class="crumbs" href="/">
-                <i class="fa fa-home"></i>首页</a>
-            <i class="fa fa-angle-right"></i>
-            <c:choose>
-                <c:when test="${articleListVoList!=null}">
-                    <c:choose>
-                        <c:when test="${articleListVoList.size()!=0}">
-                            <a href="/tag/${articleListVoList[0].tagCustomList[0].tagId}">${articleListVoList[0].tagCustomList[0].tagName}</a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="/tag/${tagCustom.tagId}">${tagCustom.tagName}</a>
-                        </c:otherwise>
-                    </c:choose>
-                    <i class="fa fa-angle-right"></i>
-                    文章
-                </c:when>
-                <c:otherwise>
-                    该标签不存在
-                </c:otherwise>
-            </c:choose>
-
-
-
-        </nav>
-        <%--面包屑导航 end--%>
-    </rapid:override>
+    <%@ include file="../Public/header.jsp" %>
+    <%--面包屑导航 start--%>
+    <nav class="breadcrumb">
+        <a class="crumbs" href="/">
+            <i class="fa fa-home"></i>首页</a>
+        <i class="fa fa-angle-right"></i>
+        <c:choose>
+            <c:when test="${articleListVoList!=null}">
+                <c:choose>
+                    <c:when test="${articleListVoList.size()!=0}">
+                        <a href="/tag/${articleListVoList[0].tagCustomList[0].tagId}">${articleListVoList[0].tagCustomList[0].tagName}</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="/tag/${tagCustom.tagId}">${tagCustom.tagName}</a>
+                    </c:otherwise>
+                </c:choose>
+                <i class="fa fa-angle-right"></i>
+                文章
+            </c:when>
+            <c:otherwise>
+                该标签不存在
+            </c:otherwise>
+        </c:choose>
 
 
-    <rapid:override name="left">
+    </nav>
+    <%--面包屑导航 end--%>
+
+    <div id="content" class="site-content" style="transform: none;">
         <%--博客主体-左侧正文 start--%>
         <div id="primary" class="content-area">
+            <%--主要内容--%>
             <main id="main" class="site-main" role="main">
-
                 <c:choose>
                     <c:when test="${articleListVoList!=null}">
                         <c:choose>
                             <c:when test="${articleListVoList.size()!=0}">
                                 <%--文章列表-start--%>
                                 <c:forEach items="${articleListVoList}" var="a">
-
-                                    <article class="post"
-                                             data-wow-delay="0.3s">
-
+                                    <article class="post" data-wow-delay="0.3s">
                                         <figure class="thumbnail">
                                             <a href="/article/${a.articleCustom.articleId}">
                                                 <img width="280" height="210"
@@ -89,7 +93,7 @@
 
                                         <div class="entry-content">
                                             <div class="archive-content">
-                                                <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
+                                                <tag:htmlFilter>${a.articleCustom.articleContent}</tag:htmlFilter>......
                                             </div>
                                             <span class="title-l"></span>
                                             <span class="new-icon">
@@ -163,7 +167,7 @@
                 </c:choose>
 
             </main><!-- .site-main -->
-
+            <%--分页--%>
             <c:choose>
                 <c:when test="${articleListVoList!=null}">
                     <c:if test="${articleListVoList.size()!=0}">
@@ -194,14 +198,16 @@
                                         <%--当前页为第一页，隐藏上一页按钮--%>
                                     </c:when>
                                     <c:otherwise>
-                                        <a class="page-numbers" href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${articleListVoList[0].page.pageNow-1}" >
+                                        <a class="page-numbers"
+                                           href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${articleListVoList[0].page.pageNow-1}">
                                             <span class="fa fa-angle-left"></span>
                                         </a>
                                     </c:otherwise>
                                 </c:choose>
                                     <%--显示第一页的页码--%>
                                 <c:if test="${begin >= 2 }">
-                                    <a class="page-numbers" href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/1">1</a>
+                                    <a class="page-numbers"
+                                       href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/1">1</a>
                                 </c:if>
                                     <%--显示点点点--%>
                                 <c:if test="${begin  > 2 }">
@@ -211,10 +217,11 @@
                                 <c:forEach begin="${begin }" end="${end }" var="i">
                                     <c:choose>
                                         <c:when test="${i eq articleListVoList[0].page.pageNow }">
-                                            <a class="page-numbers current" >${i}</a>
+                                            <a class="page-numbers current">${i}</a>
                                         </c:when>
                                         <c:otherwise>
-                                            <a  class="page-numbers" href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${i}">${i }</a>
+                                            <a class="page-numbers"
+                                               href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${i}">${i }</a>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:forEach>
@@ -235,7 +242,8 @@
                                     </c:when>
                                     <c:otherwise>
                                         <c:if test="articleListVoList[0].page.totalPageCount>0">
-                                            <a class="page-numbers" href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${articleListVoList[0].page.pageNow+1}">
+                                            <a class="page-numbers"
+                                               href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${articleListVoList[0].page.pageNow+1}">
                                                 <span class="fa fa-angle-right"></span>
                                             </a>
                                         </c:if>
@@ -249,13 +257,20 @@
                 </c:when>
             </c:choose>
 
-
         </div><!-- .content-area -->
         <%--  博客主体-左侧正文 end--%>
-    </rapid:override>
+        <%@ include file="../Public/sidebar-1.jsp" %>
+    </div>
 
+    <div class="clear"></div>
+    <%@ include file="../Public/footer.jsp" %>
 
+</div>
 
+<script src="/js/jquery.min.js"></script>
+<script src="/js/superfish.js"></script>
+<script src="/js/script.js"></script>
+<script src="/plugin/layui/layui.all.js"></script>
 
-
-<%@ include file="../Public/framework.jsp" %>
+</body>
+</html>

@@ -1,37 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
+<%--
+    文章归档
+--%>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <link rel="shortcut icon" href="/img/logo.png">
+    <meta name="description" content="文章归档"/>
+    <meta name="keywords" content="文章,归档"/>
+    <title>文章归档--${options.optionSiteTitle}</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
 
-    <rapid:override name="description">
-        <meta name="description" content="文章归档"/>
-    </rapid:override>
+</head>
+<body>
+<div id="page" class="site" style="transform: none;">
 
-    <rapid:override name="keywords">
-        <meta name="keywords" content="文章,归档"/>
-    </rapid:override>
+    <%@ include file="../Public/header.jsp" %>
+    <%--面包屑导航 start--%>
+    <nav class="breadcrumb">
+        <a class="crumbs" href="/">
+            <i class="fa fa-home"></i>首页
+        </a>
+        <i class="fa fa-angle-right"></i>
+        文章归档
+        <i class="fa fa-angle-right"></i>
+        正文
+    </nav>
+    <%--面包屑导航 end--%>
 
-    <rapid:override name="title">
-        <title>文章归档--${options.optionSiteTitle}</title>
-    </rapid:override>
-
-    <rapid:override name="breadcrumb">
-        <%--面包屑导航 start--%>
-        <nav class="breadcrumb">
-            <a class="crumbs" href="/">
-                <i class="fa fa-home"></i>首页
-            </a>
-            <i class="fa fa-angle-right"></i>
-            文章归档
-            <i class="fa fa-angle-right"></i>
-            正文
-        </nav>
-        <%--面包屑导航 end--%>
-    </rapid:override>
-
-    <rapid:override name="left">
+    <div id="content" class="site-content" style="transform: none;">
         <%--博客主体-左侧正文 start--%>
         <section id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
@@ -47,6 +57,18 @@
                 </ul>
             </main>
         </section>
-    </rapid:override>
+        <%@ include file="../Public/sidebar-1.jsp" %>
+    </div>
+    <div class="clear"></div>
 
-<%@ include file="../Public/framework.jsp" %>
+    <%@ include file="../Public/footer.jsp" %>
+
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/superfish.js"></script>
+<script src="/js/script.js"></script>
+<script src="/plugin/layui/layui.all.js"></script>
+
+</body>
+</html>

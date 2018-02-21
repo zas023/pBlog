@@ -1,7 +1,7 @@
 package com.copasso.blog.model.vo;
 
 
-import com.copasso.blog.util.Page;
+import com.copasso.blog.util.PageHelper;
 
 /**
  *  用于封装评论信息，包括评论内容，作者信息，文章信息
@@ -14,7 +14,7 @@ public class CommentListVo {
     private ArticleCustom articleCustom;
 
     //分页信息
-    private Page page;
+    private PageHelper page;
 
     public CommentCustom getCommentCustom() {
         return commentCustom;
@@ -32,11 +32,11 @@ public class CommentListVo {
         this.articleCustom = articleCustom;
     }
 
-    public Page getPage() {
+    public PageHelper getPage() {
         return page;
     }
 
-    public void setPage(Page page) {
+    public void setPage(PageHelper page) {
         this.page = page;
     }
 }

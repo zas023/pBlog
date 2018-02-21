@@ -1,6 +1,5 @@
 package com.copasso.blog.controller;
 
-
 import com.copasso.blog.model.vo.*;
 import com.copasso.blog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +26,13 @@ public class ArticleController {
 	public void init(Model model) throws Exception {
 		
 	}
-	
-	//文章详情页显示
+
+	/**
+	 * 文章详情页显示
+	 * @param articleId
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/article/{articleId}")
 	@ResponseBody
 	public ModelAndView ArticleDetailView(@PathVariable("articleId") Integer articleId) throws Exception{
@@ -61,8 +65,13 @@ public class ArticleController {
 		return modelAndView;//不会被解析为跳转路径，而是直接写入HTTP response body中
 		
 	}
-	
-	//文章点赞数增加
+
+	/**
+	 * 文章点赞数增加
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/article/addLike/{id}",method = {RequestMethod.POST})
 	@ResponseBody
 	public Integer increaseLikeCount(@PathVariable("id") Integer id)
@@ -73,8 +82,13 @@ public class ArticleController {
 		articleService.updateArticle(id, articleCustom);
 		return articleCount+1;
 	}
-	
-	//文章访问量数增加
+
+	/**
+	 * 文章访问量数增加
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/article/addView/{id}",method = {RequestMethod.POST})
 	@ResponseBody
 	public Integer increaseViewCount(@PathVariable("id") Integer id)
@@ -86,10 +100,13 @@ public class ArticleController {
 		return articleCount+1;
 	}
 
-	
-
-
-	//文章信息修改提交
+	/**
+	 * 文章信息修改提交
+	 * @param id
+	 * @param articleCustom
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/editArticleSubmit",method = RequestMethod.POST)
 	public String editArticleSubmit(Integer id , ArticleCustom articleCustom) throws Exception {
 
@@ -98,7 +115,13 @@ public class ArticleController {
 		return "redirect:articleList.action";
 	}
 
-	//文章搜索实现
+	/**
+	 * 文章搜索实现
+	 * @param request
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/search")
 	@ResponseBody
 	public ModelAndView SearchPageView(HttpServletRequest request,Model model) throws Exception {
@@ -116,7 +139,14 @@ public class ArticleController {
 		return modelAndView;
 	}
 
-	//文章搜索分页实现
+	/**
+	 * 文章搜索分页实现
+	 * @param request
+	 * @param model
+	 * @param pageNow
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/p/{pageNow}/search")
 	@ResponseBody
 	public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {

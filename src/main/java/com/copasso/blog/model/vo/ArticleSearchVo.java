@@ -1,7 +1,7 @@
 package com.copasso.blog.model.vo;
 
 
-import com.copasso.blog.util.Page;
+import com.copasso.blog.util.PageHelper;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class ArticleSearchVo {
 	private UserCustom userCustom;
 
 	//文章分页信息
-	private Page page;
+	private PageHelper page;
 
 	//搜索关键词
 	private String query;
@@ -69,11 +69,11 @@ public class ArticleSearchVo {
 		this.tagCustomList = tagCustomList;
 	}
 
-	public Page getPage() {
+	public PageHelper getPage() {
 		return page;
 	}
 	
-	public void setPage(Page page) {
+	public void setPage(PageHelper page) {
 		this.page = page;
 	}
 }

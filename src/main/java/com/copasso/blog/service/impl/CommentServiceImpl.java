@@ -9,7 +9,7 @@ import com.copasso.blog.dao.custom.ArticleMapperCustom;
 import com.copasso.blog.dao.custom.CommentMapperCustom;
 import com.copasso.blog.model.vo.CommentCustom;
 import com.copasso.blog.service.CommentService;
-import com.copasso.blog.util.Page;
+import com.copasso.blog.util.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -63,13 +63,13 @@ public class CommentServiceImpl implements CommentService{
 		List<CommentCustom> commentCustomList = new ArrayList<CommentCustom>();
 
 
-		Page page = null;
+		PageHelper page = null;
 		int totalCount = commentMapperCustom.countComment(status);
 		if (pageNow != null) {
-			page = new Page(totalCount, pageNow,pageSize);
+			page = new PageHelper(totalCount, pageNow,pageSize);
 			commentCustomList = commentMapperCustom.listCommentByPage(status,page.getStartPos(),pageSize);
 		} else {
-			page = new Page(totalCount, 1,pageSize);
+			page = new PageHelper(totalCount, 1,pageSize);
 			commentCustomList = commentMapperCustom.listCommentByPage(status,page.getStartPos(), pageSize);
 		}
 

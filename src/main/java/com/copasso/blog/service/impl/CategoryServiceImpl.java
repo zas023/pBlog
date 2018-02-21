@@ -8,7 +8,7 @@ import com.copasso.blog.model.vo.ArticleCustom;
 import com.copasso.blog.model.vo.ArticleListVo;
 import com.copasso.blog.model.vo.CategoryCustom;
 import com.copasso.blog.service.CategoryService;
-import com.copasso.blog.util.Page;
+import com.copasso.blog.util.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,14 +62,14 @@ public class CategoryServiceImpl implements CategoryService {
 		}
 
 		//分页显示
-		Page page = null;
+		PageHelper page = null;
 		int totalCount = articleMapperCustom.countArticleByCategory(status,cateId);
 
 		if (pageNow != null) {
-			page = new Page(totalCount, pageNow,pageSize);
+			page = new PageHelper(totalCount, pageNow,pageSize);
 			articleCustomList = categoryMapperCustom.listArticleWithCategoryByPage(status,cateId,page.getStartPos(), page.getPageSize());
 		} else {
-			page = new Page(totalCount, 1,pageSize);
+			page = new PageHelper(totalCount, 1,pageSize);
 			articleCustomList = categoryMapperCustom.listArticleWithCategoryByPage(status,cateId,page.getStartPos(), page.getPageSize());
 			
 		}

@@ -11,7 +11,7 @@ import com.copasso.blog.model.bo.User;
 import com.copasso.blog.model.vo.*;
 import com.copasso.blog.service.ArticleService;
 import com.copasso.blog.util.FunctionUtils;
-import com.copasso.blog.util.Page;
+import com.copasso.blog.util.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,6 @@ import java.util.List;
 
 /**
  * 用户管理
- * Created by 言曌 on 2017/8/24.
  */
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -48,13 +47,24 @@ public class ArticleServiceImpl implements ArticleService {
 	@Autowired
 	private CommentMapperCustom commentMapperCustom;
 
-
+	/**
+	 * 文章数
+	 * @param status
+	 * @return
+	 * @throws Exception
+	 */
 	@Override
 	public Integer countArticle(Integer status) throws Exception {
 		Integer articleCount = articleMapperCustom.countArticle(status);
 		return articleCount ;
 	}
-	
+
+	/**
+	 * 文章评论数
+	 * @param status
+	 * @return
+	 * @throws Exception
+	 */
 	@Override
 	public Integer countArticleComment(Integer status) throws Exception {
 		Integer commentCount = articleMapperCustom.countArticleComment(status);
@@ -161,13 +171,13 @@ public class ArticleServiceImpl implements ArticleService {
 		
 		//获得文章列表信息和分页信息
 		List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
-		Page page = null;
+		PageHelper page = null;
 		int totalCount = articleMapperCustom.countArticle(status);
 		if (pageNow != null) {
-			page = new Page(totalCount, pageNow,pageSize);
+			page = new PageHelper(totalCount, pageNow,pageSize);
 			articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(),pageSize);
 		} else {
-			page = new Page(totalCount, 1,pageSize);
+			page = new PageHelper(totalCount, 1,pageSize);
 			articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(), pageSize);
 		}
 		
@@ -297,16 +307,16 @@ public class ArticleServiceImpl implements ArticleService {
 	//文章查询结果分页
 	@Override
 	public List<ArticleSearchVo> listSearchResultByPage(Integer status,HttpServletRequest request, Model model,Integer pageNow,Integer pageSize,String query) throws Exception {
-		Page page = null;
+		PageHelper page = null;
 		List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
 		int totalCount = articleMapperCustom.getSearchResultCount(status,query);
 
 
         if (pageNow != null) {
-            page = new Page(totalCount, pageNow, pageSize);
+            page = new PageHelper(totalCount, pageNow, pageSize);
             articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, page.getStartPos(), page.getPageSize());
         } else {
-            page = new Page(totalCount, 1, pageSize);
+            page = new PageHelper(totalCount, 1, pageSize);
             articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, page.getStartPos(), page.getPageSize());
         }
 
@@ -420,31 +430,57 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 
-    //添加文章
-    @Override
+	/**
+	 * 添加文章
+	 * @param article
+	 * @throws Exception
+	 */
+	@Override
     public void insertArticle(Article article) throws Exception {
         articleMapper.insertSelective(article);
     }
 
-    //统计某个分类的文章数
+	/**
+	 * 统计某个分类的文章数
+	 * @param status
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
 	@Override
 	public Integer countArticleWithCategory(Integer status,Integer id) throws Exception {
 		int count = articleMapperCustom.countArticleByCategory(status,id);
 		return count;
 	}
 
-	//统计某个标签的文章数
+	/**
+	 * 统计某个标签的文章数
+	 * @param status
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
 	@Override
 	public Integer countArticleWithTag(Integer status,Integer id) throws Exception {
 		int count = articleMapperCustom.countArticleByTag(status,id);
 		return count;
 	}
 
+	/**
+	 * 更新评论数
+	 * @param articleId
+	 * @throws Exception
+	 */
 	@Override
 	public void updateCommentCount(Integer articleId) throws Exception {
 		articleMapperCustom.updateCommentCount(articleId);
 	}
 
+	/**
+	 * 获取最新文章
+	 * @return
+	 * @throws Exception
+	 */
 	@Override
 	public ArticleCustom getLastUpdateArticle() throws Exception {
 		ArticleCustom articleCustom = articleMapperCustom.getLastUpdateArticle();

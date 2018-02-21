@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>blog</title>
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+    <!--引入markdown css样式 -->
+    <link rel="stylesheet" href="/plugin/editor/css/editormd.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div class="editormd" id="test-editormd">
+    <textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc"></textarea>
+    <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
+    <textarea class="editormd-html-textarea" name="text"></textarea>
+</div>
+<script src="/plugin/editor/jquery.min.js"></script>
+<script src="/plugin/editor/editormd.js"></script>
+<script type="text/javascript">
+    $(function() {
+        editormd("test-editormd", {
+            width   : "90%",
+            height  : 640,
+            syncScrolling : "single",
+            //你的lib目录的路径，我这边用JSP做测试的
+            path    : "/plugin/editor/lib/",
+            //这个配置在simple.html中并没有，但是为了能够提交表单，使用这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单。
+            saveHTMLToTextarea : true
+        });
+    });
+</script>
+<!--<form class="layui-form" action="">-->
+    <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">用户名</label>-->
+        <!--<div class="layui-input-block">-->
+            <!--<input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">密码</label>-->
+        <!--<div class="layui-input-block">-->
+            <!--<input type="text" name="title" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</form>-->
+
+<!--<script>-->
+    <!--var app = new Vue({-->
+        <!--el: '#app',-->
+        <!--data: {-->
+            <!--message: 'Hello Vue!'-->
+        <!--}-->
+    <!--})-->
+<!--</script>-->
+
+</body>
+</html>

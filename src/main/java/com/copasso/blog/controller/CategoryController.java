@@ -46,7 +46,7 @@ public class CategoryController {
 		CategoryCustom categoryCustom = categoryService.getCategoryById(1,cateId);
 		modelAndView.addObject("categoryCustom",categoryCustom);
 
-		modelAndView.setViewName("Home/Page/articleListByCategory");
+		modelAndView.setViewName("Home/Page/articleListByCategory1");
 		return modelAndView;
 	}
 	
@@ -59,7 +59,7 @@ public class CategoryController {
 		int pageSize = 10;
 		List<ArticleListVo> articleListVoList = categoryService.listArticleWithCategoryByPage(1,pageNow,pageSize,cateId);
 		modelAndView.addObject("articleListVoList",articleListVoList);
-		modelAndView.setViewName("Home/Page/articleListByCategory");
+		modelAndView.setViewName("Home/Page/articleListByCategory1");
 
         //该分类信息
         CategoryCustom categoryCustom = categoryService.getCategoryById(1,cateId);

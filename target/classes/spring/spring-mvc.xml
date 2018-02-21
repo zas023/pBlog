@@ -43,6 +43,7 @@
     <mvc:resources mapping="/img/**" location="/resource/assets/img/"></mvc:resources>
     <mvc:resources mapping="/uploads/**" location="/uploads/"></mvc:resources>
     <mvc:resources mapping="/plugin/**" location="/resource/assets/plugin/"></mvc:resources>
+    <mvc:resources mapping="/public/**" location="/public/"></mvc:resources>
 
     <mvc:interceptors>
         <mvc:interceptor>

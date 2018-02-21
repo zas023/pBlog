@@ -11,7 +11,7 @@ import com.copasso.blog.model.vo.ArticleListVo;
 import com.copasso.blog.model.vo.CategoryCustom;
 import com.copasso.blog.model.vo.TagCustom;
 import com.copasso.blog.service.TagService;
-import com.copasso.blog.util.Page;
+import com.copasso.blog.util.PageHelper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -71,14 +71,14 @@ public class TagServiceImpl implements TagService {
 		}
 		
 		//分页显示
-		Page page = null;
+		PageHelper page = null;
 
 		int totalCount = articleMapperCustom.countArticleByTag(status,tagId);
 		if (pageNow != null) {
-			page = new Page(totalCount, pageNow,pageSize);
+			page = new PageHelper(totalCount, pageNow,pageSize);
 			articleCustomList = tagMapperCustom.listArticleWithTagByPage(status,tagId,page.getStartPos(), page.getPageSize());
 		} else {
-			page = new Page(totalCount, 1,pageSize);
+			page = new PageHelper(totalCount, 1,pageSize);
 			articleCustomList = tagMapperCustom.listArticleWithTagByPage(status,tagId,page.getStartPos(), page.getPageSize());
 		}
 		
