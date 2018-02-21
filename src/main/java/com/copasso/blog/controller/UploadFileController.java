@@ -3,6 +3,7 @@ package com.copasso.blog.controller;
 import com.copasso.blog.model.vo.ResultVO;
 import com.copasso.blog.model.vo.UploadFileVO;
 import org.apache.ibatis.annotations.Param;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,14 +24,18 @@ public class UploadFileController {
     @Autowired
     private HttpServletRequest request;
 
-    //上传文件
-    //上传文件
+    /**
+     * 上传文件
+     * @param file
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(value = "/uploadFile",method = RequestMethod.POST)
     @ResponseBody
-    public ResultVO uploadFile(@Param("file")MultipartFile file) throws IOException {
+    public JSONObject uploadFile(@Param("file")MultipartFile file) throws IOException {
 
         //本地使用,上传位置
-        String rootPath =request.getSession().getServletContext().getRealPath("upload");
+        String rootPath =request.getSession().getServletContext().getRealPath("uploads");
 
         //文件的完整名称,如spring.jpeg
         String filename = file.getOriginalFilename();
@@ -74,6 +79,13 @@ public class UploadFileController {
         uploadFileVO.setTitle(filename);
         uploadFileVO.setSrc(fileUrl);
         resultVO.setData(uploadFileVO);
-        return resultVO;
+
+        JSONObject res = new JSONObject();
+        res.put("url", "/uploads/"+dateDirs+ "/"+newFilename);
+        res.put("success", 1);
+        res.put("message", "upload success!");
+
+        return res;
+        //return resultVO;
     }
 }

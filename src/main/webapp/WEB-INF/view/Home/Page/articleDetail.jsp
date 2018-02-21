@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/plugin/editor/css/editormd.css"/>
     <style>
         .entry-title {
             background: #f8f8f8;
@@ -68,8 +69,13 @@
                         </h1>
                     </header><!-- .entry-header -->
                     <div class="entry-content">
-                        <div class="single-content">
-                            ${articleDetailVo.articleCustom.articleContent}
+                        <%--<div class="single-content">--%>
+                        <%--${articleDetailVo.articleCustom.articleContent}--%>
+                        <%--</div>--%>
+                        <div id="doc-content">
+                            <textarea style="display:none;" placeholder="markdown语言">
+                                ${articleDetailVo.articleCustom.articleContent}
+                            </textarea>
                         </div>
                         <div class="s-weixin">
                             <ul class="weimg1">
@@ -193,7 +199,6 @@
                 </div>
                 <%--所属标签 end--%>
 
-
                 <%--版权声明 start--%>
                 <div class="authorbio wow fadeInUp">
                     <img alt="${articleDetailVo.userCustom.userNickname}" src="${articleDetailVo.userCustom.userAvatar}"
@@ -218,7 +223,6 @@
                     <div class="clear"></div>
                 </div>
                 <%--版权声明 end--%>
-
 
                 <%--相关文章 start--%>
                 <div id="single-widget">
@@ -497,6 +501,14 @@
 </div>
 
 <script src="/js/jquery.min.js"></script>
+<script src="/plugin/editor/lib/marked.min.js"></script>
+<script src="/plugin/editor/lib/prettify.min.js"></script>
+<script src="/plugin/editor/lib/raphael.min.js"></script>
+<script src="/plugin/editor/lib/underscore.min.js"></script>
+<script src="/plugin/editor/lib/sequence-diagram.min.js"></script>
+<script src="/plugin/editor/lib/flowchart.min.js"></script>
+<script src="/plugin/editor/lib/jquery.flowchart.min.js"></script>
+<script src="/plugin/editor/editormd.min.js"></script>
 <script src="/js/superfish.js"></script>
 <script src="/js/script.js"></script>
 <script src="/plugin/layui/layui.all.js"></script>
@@ -508,6 +520,19 @@
         elem: 'pre',//默认值为.layui-code
         // skin: 'notepad', //如果要默认风格，不用设定该key。
         about: false
+    });
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        editormd.markdownToHTML("doc-content", {
+            htmlDecode      : "style,script,iframe",
+            emoji           : true,
+            taskList        : true,
+            tex             : true,  // 默认不解析
+            flowChart       : true,  // 默认不解析
+            sequenceDiagram : true  // 默认不解析
+        });
     });
 </script>
 

@@ -6,7 +6,9 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
 <rapid:override name="title">- 新建文章</rapid:override>
-
+<rapid:override name="header-script">
+    <link rel="stylesheet" href="/plugin/editor/css/editormd.css" />
+</rapid:override>
 <%-- 内容 --%>
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
@@ -28,12 +30,26 @@
             </div>
         </div>
 
+        <%--<div class="layui-form-item">--%>
+            <%--<label class="layui-form-label">编辑器</label>--%>
+            <%--<div class="layui-input-block">--%>
+                <%--<input type="checkbox" name="switch" lay-skin="switch">--%>
+            <%--</div>--%>
+        <%--</div>--%>
+
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
-            <div class="layui-input-block">
-                <textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content"
-                          id="content"></textarea>
+            <%--markdown编辑器--%>
+            <div class="editormd" id="myEditormd">
+                <textarea class="editormd-markdown-textarea" name="articleContent"></textarea>
+                <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
+                <textarea class="editormd-html-textarea" name="html"></textarea>
             </div>
+            <%--富文本编辑器--%>
+            <%--<div class="layui-input-block" id="myTextEdit">--%>
+                <%--<textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content"--%>
+                          <%--id="content"></textarea>--%>
+            <%--</div>--%>
 
         </div>
 
@@ -93,7 +109,35 @@
 </rapid:override>
 
 <rapid:override name="footer-script">
+    <script src="/plugin/editor/jquery.min.js"></script>
+    <script src="/plugin/editor/editormd.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            editormd("myEditormd", {
+                width   : "90%",
+                height  : 640,
+                syncScrolling : "single",
+                //你的lib目录的路径，我这边用JSP做测试的
+                path    : "/plugin/editor/lib/",
+                //这个配置在simple.html中并没有，但是为了能够提交表单
+                //使用这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单。
+                saveHTMLToTextarea : true,
+                searchReplace: true,
+                htmlDecode: "style,script,iframe|on*",
+                emoji: true,
+                taskList: true,
+                tocm: true,                  // Using [TOCM]
+                tex: true,                   // 开启科学公式TeX语言支持，默认关闭
+                flowChart: true,             // 开启流程图支持，默认关闭
+                sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
 
+                /**上传图片相关配置如下*/
+                imageUpload : true,
+                imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL : "/uploadFile",//注意你后端的上传图片服务地址
+            });
+        });
+    </script>
     <script>
         layui.use(['form', 'layedit', 'laydate'], function () {
             var form = layui.form
