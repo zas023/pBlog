@@ -30,13 +30,6 @@
             </div>
         </div>
 
-        <%--<div class="layui-form-item">--%>
-            <%--<label class="layui-form-label">编辑器</label>--%>
-            <%--<div class="layui-input-block">--%>
-                <%--<input type="checkbox" name="switch" lay-skin="switch">--%>
-            <%--</div>--%>
-        <%--</div>--%>
-
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
             <%--markdown编辑器--%>

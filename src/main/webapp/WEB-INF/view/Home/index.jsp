@@ -273,10 +273,20 @@
 <script src="/js/superfish.js"></script>
 <script src="/js/script.js"></script>
 <script src="/plugin/layui/layui.all.js"></script>
-<script src="/plugin/layui/layui.all.js"></script>
 <script>
-    layui.use('carousel', function () {
+    layui.use(['util', 'carousel'], function () {
         var carousel = layui.carousel;
+        var util = layui.util;
+        //执行
+        util.fixbar({
+            bar1: true
+            ,click: function(type){
+                console.log(type);
+                if(type === 'bar1'){
+                    window.location.href="/message";
+                }
+            }
+        });
         //建造实例
         carousel.render({
             elem: '#banner',

@@ -39,9 +39,9 @@
                 <%--<textarea class="layui-textarea layui-hide" name="articleContent" id="content">${articleCustom.articleContent}</textarea>--%>
             <%--</div>--%>
             <div class="editormd" id="myEditormd">
-                <textarea class="editormd-markdown-textarea" name="test-editormd-markdown-doc">${articleCustom.articleContent}</textarea>
+                <textarea class="editormd-markdown-textarea" name="articleContent">${articleCustom.articleContent}</textarea>
                 <!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
-                <textarea class="editormd-html-textarea" name="articleContent" ></textarea>
+                <textarea class="editormd-html-textarea" name="html" ></textarea>
             </div>
         </div>
 

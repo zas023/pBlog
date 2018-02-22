@@ -32,7 +32,7 @@ public class UploadFileController {
      */
     @RequestMapping(value = "/uploadFile",method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject uploadFile(@Param("file")MultipartFile file) throws IOException {
+    public ResultVO uploadFile(@Param("file")MultipartFile file) throws IOException {
 
         //本地使用,上传位置
         String rootPath =request.getSession().getServletContext().getRealPath("uploads");
@@ -80,12 +80,6 @@ public class UploadFileController {
         uploadFileVO.setSrc(fileUrl);
         resultVO.setData(uploadFileVO);
 
-        JSONObject res = new JSONObject();
-        res.put("url", "/uploads/"+dateDirs+ "/"+newFilename);
-        res.put("success", 1);
-        res.put("message", "upload success!");
-
-        return res;
-        //return resultVO;
+        return resultVO;
     }
 }

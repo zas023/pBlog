@@ -516,6 +516,19 @@
 
 <script type="text/javascript">
     increaseViewCount();
+    layui.use('util', function(){
+        var util = layui.util;
+        //执行
+        util.fixbar({
+            bar1: true
+            ,click: function(type){
+                console.log(type);
+                if(type === 'bar1'){
+                    window.location.href="/message";
+                }
+            }
+        });
+    });
     layui.code({
         elem: 'pre',//默认值为.layui-code
         // skin: 'notepad', //如果要默认风格，不用设定该key。
