@@ -57,7 +57,7 @@ public class IndexController extends BaseController {
     @ModelAttribute
     public void init(HttpServletRequest request){
         //最新文章
-        request.setAttribute("recent_articles", siteService.recentContents(8));
+        request.setAttribute("recent_articles", siteService.recentContents(7));
         //最新评论
         request.setAttribute("recent_comments", siteService.recentComments(8));
     }

@@ -6,7 +6,7 @@
 	<groupId>com.copasso</groupId>
 	<artifactId>blog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>blog</name>
 	<description>Blog project for Spring Boot</description>
@@ -149,6 +149,7 @@
 
 	<!-- 普通的maven打包方式 -->
 	<build>
+		<finalName>blog</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

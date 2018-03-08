@@ -47,7 +47,6 @@ public class BlogApplication extends SpringBootServletInitializer
         return new DataSourceTransactionManager(dataSource());
     }
 
-
     public static void main(String[] args) {
         SpringApplication.run(BlogApplication.class, args);
     }
