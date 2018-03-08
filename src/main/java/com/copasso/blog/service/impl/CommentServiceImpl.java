@@ -1,176 +1,193 @@
 package com.copasso.blog.service.impl;
 
-import com.copasso.blog.model.bo.Comment;
-import com.copasso.blog.model.vo.ArticleCustom;
-import com.copasso.blog.model.vo.CommentListVo;
-import com.copasso.blog.dao.ArticleMapper;
-import com.copasso.blog.dao.CommentMapper;
-import com.copasso.blog.dao.custom.ArticleMapperCustom;
-import com.copasso.blog.dao.custom.CommentMapperCustom;
-import com.copasso.blog.model.vo.CommentCustom;
-import com.copasso.blog.service.CommentService;
-import com.copasso.blog.util.PageHelper;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.copasso.blog.exception.TipException;
+import com.copasso.blog.utils.DateKit;
+import com.copasso.blog.utils.BlogUtils;
+import com.copasso.blog.dao.CommentVoMapper;
+import com.copasso.blog.model.Bo.CommentBo;
+import com.copasso.blog.model.Vo.CommentVo;
+import com.copasso.blog.model.Vo.CommentVoExample;
+import com.copasso.blog.model.Vo.ContentVo;
+import com.copasso.blog.service.ICommentService;
+import com.copasso.blog.service.IContentService;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-import com.copasso.blog.util.FunctionUtils;
-
-import javax.servlet.http.HttpServletRequest;
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 言曌 on 2017/9/10.
+ * 评论
  */
-public class CommentServiceImpl implements CommentService{
-	@Autowired
-	private CommentMapperCustom commentMapperCustom;
+@Service
+public class CommentServiceImpl implements ICommentService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommentServiceImpl.class);
 
-	@Autowired
-	private CommentMapper commentMapper;
+    @Resource
+    private CommentVoMapper commentMapper;
 
-	@Autowired
-	private ArticleMapper articleMapper;
+    @Resource
+    private IContentService contentService;
 
-	@Autowired
-	private ArticleMapperCustom articleMapperCustom;
+    @Override
+    public void insertComment(CommentVo comments) {
+        if (null == comments) {
+            throw new TipException("评论对象为空");
+        }
+        if (StringUtils.isBlank(comments.getAuthor())) {
+            comments.setAuthor("热心网友");
+        }
+        if (StringUtils.isNotBlank(comments.getMail()) && !BlogUtils.isEmail(comments.getMail())) {
+            throw new TipException("请输入正确的邮箱格式");
+        }
+        if (StringUtils.isBlank(comments.getContent())) {
+            throw new TipException("评论内容不能为空");
+        }
+        if (comments.getContent().length() < 5 || comments.getContent().length() > 2000) {
+            throw new TipException("评论字数在5-2000个字符");
+        }
+        if (null == comments.getCid()) {
+            throw new TipException("评论文章不能为空");
+        }
+        ContentVo contents = contentService.getContents(String.valueOf(comments.getCid()));
+        if (null == contents) {
+            throw new TipException("不存在的文章");
+        }
+        comments.setOwnerId(contents.getAuthorId());
+        comments.setCreated(DateKit.getCurrentUnixTime());
+        commentMapper.insertSelective(comments);
 
-	@Override
-	public void insertComment(HttpServletRequest request, Comment comment) throws Exception {
-	    String ip = FunctionUtils.getIpAddr(request);
-	    comment.setCommentIp(ip);
-		commentMapper.insertSelective(comment);
-	}
-	
-	@Override
-	public List<CommentCustom> listCommentByArticleId(Integer status,Integer articleId) {
-		List<CommentCustom> commentCustomList = commentMapperCustom.listCommentByArticleId(status,articleId);
-		return commentCustomList;
-	}
+        ContentVo temp = new ContentVo();
+        temp.setCid(contents.getCid());
+        temp.setCommentsNum(contents.getCommentsNum() + 1);
+        contentService.updateContentByCid(temp);
+    }
 
-	@Override
-	public CommentCustom getCommentById(Integer id) throws Exception {
-		CommentCustom commentCustom = new CommentCustom();
-		Comment comment = commentMapper.selectByPrimaryKey(id);
-		BeanUtils.copyProperties(comment,commentCustom);
-		return commentCustom;
-	}
+    /**
+     * 获取文章评论
+     * @param cid  文章id
+     * @param page  页码
+     * @param limit  个数
+     * @return
+     */
+    @Override
+    public PageInfo<CommentBo> getComments(Integer cid, int page, int limit) {
 
-	@Override
-	public List<CommentListVo> listCommentByPage(Integer status, Integer pageNow, Integer pageSize) throws Exception {
-		List<CommentListVo> commentListVoList = new ArrayList<CommentListVo>();
+        if (null != cid) {
+            PageHelper.startPage(page, limit);
+            CommentVoExample commentVoExample = new CommentVoExample();
+            //获取所有评论
+            commentVoExample.createCriteria().andCidEqualTo(cid).andParentEqualTo(0);
+            commentVoExample.setOrderByClause("coid desc");
+            List<CommentVo> parents = commentMapper.selectByExampleWithBLOBs(commentVoExample);
+            PageInfo<CommentVo> commentPaginator = new PageInfo<>(parents);
+            PageInfo<CommentBo> returnBo = copyPageInfo(commentPaginator);
+            if (parents.size() != 0) {
+                //Vo-->Bo
+                List<CommentBo> comments = new ArrayList<>(parents.size());
+                parents.forEach(parent -> {
+                    CommentBo comment = new CommentBo(parent);
 
-		List<CommentCustom> commentCustomList = new ArrayList<CommentCustom>();
+                    List<CommentVo> children = new ArrayList<>();
+                    getChildren(children,comment.getCoid());
+                    comment.setChildren(children);
+                    if (children.size()>0)
+                        comment.setLevels(1);
 
+                    comments.add(comment);
+                });
+                returnBo.setList(comments);
+            }
+            return returnBo;
+        }
+        return null;
+    }
 
-		PageHelper page = null;
-		int totalCount = commentMapperCustom.countComment(status);
-		if (pageNow != null) {
-			page = new PageHelper(totalCount, pageNow,pageSize);
-			commentCustomList = commentMapperCustom.listCommentByPage(status,page.getStartPos(),pageSize);
-		} else {
-			page = new PageHelper(totalCount, 1,pageSize);
-			commentCustomList = commentMapperCustom.listCommentByPage(status,page.getStartPos(), pageSize);
-		}
+    /**
+     * 获取评论下的追加评论
+     *
+     * @param coid
+     * @return
+     */
+    private void getChildren(List<CommentVo> list, Integer coid) {
 
+        CommentVoExample commentVoExample = new CommentVoExample();
+        //获取所有评论
+        commentVoExample.createCriteria().andParentEqualTo(coid);
+        commentVoExample.setOrderByClause("coid desc");
+        List<CommentVo> parents = commentMapper.selectByExampleWithBLOBs(commentVoExample);
+        if (null != parents) {
+            list.addAll(parents);
+            parents.forEach(c -> getChildren(list, c.getCoid()));
+        }
+    }
 
-		for(int i=0;i<commentCustomList.size();i++) {
-			CommentListVo commentListVo = new CommentListVo();
-			//获得文章信息
-			Integer articleId = commentCustomList.get(i).getCommentArticleId();
-			ArticleCustom articleCustom = articleMapperCustom.getArticleById(status,articleId);
-			commentListVo.setArticleCustom(articleCustom);
+    @Override
+    public PageInfo<CommentVo> getCommentsWithPage(CommentVoExample commentVoExample, int page, int limit) {
+        PageHelper.startPage(page, limit);
+        List<CommentVo> commentVos = commentMapper.selectByExampleWithBLOBs(commentVoExample);
+        PageInfo<CommentVo> pageInfo = new PageInfo<>(commentVos);
+        return pageInfo;
+    }
 
-			//评论信息
-            CommentCustom commentCustom = commentCustomList.get(i);
-			//评论者Gravatar头像
-            String avatar = FunctionUtils.getGravatar(commentCustom.getCommentAuthorEmail());
-            commentCustom.setCommentAuthorAvatar(avatar);
-            commentListVo.setCommentCustom(commentCustomList.get(i));
+    @Override
+    public void update(CommentVo comments) {
+        if (null != comments && null != comments.getCoid()) {
+            commentMapper.updateByPrimaryKeyWithBLOBs(comments);
+        }
+    }
 
-			commentListVoList.add(commentListVo);
-		}
+    @Override
+    public void delete(Integer coid, Integer cid) {
+        if (null == coid) {
+            throw new TipException("主键为空");
+        }
+        commentMapper.deleteByPrimaryKey(coid);
+        ContentVo contents = contentService.getContents(cid + "");
+        if (null != contents && contents.getCommentsNum() > 0) {
+            ContentVo temp = new ContentVo();
+            temp.setCid(cid);
+            temp.setCommentsNum(contents.getCommentsNum() - 1);
+            contentService.updateContentByCid(temp);
+        }
+    }
 
-		if(commentListVoList.size()>0) {
-			//4、将Page信息存储在第一个元素中
-			commentListVoList.get(0).setPage(page);
-		}
-		return commentListVoList;
-	}
+    @Override
+    public CommentVo getCommentById(Integer coid) {
+        if (null != coid) {
+            return commentMapper.selectByPrimaryKey(coid);
+        }
+        return null;
+    }
 
-	@Override
-	public List<CommentListVo> listCommentVo(Integer status) throws Exception {
-		List<CommentListVo> commentListVoList = new ArrayList<CommentListVo>();
-
-		List<CommentCustom> commentCustomList = commentMapperCustom.listComment(status);
-
-		for(int i=0;i<commentCustomList.size();i++) {
-			CommentListVo commentListVo = new CommentListVo();
-			//获得文章信息
-			Integer articleId = commentCustomList.get(i).getCommentArticleId();
-			ArticleCustom articleCustom = articleMapperCustom.getArticleById(status,articleId);
-			commentListVo.setArticleCustom(articleCustom);
-
-			//评论信息
-			CommentCustom commentCustom = commentCustomList.get(i);
-			//评论者Gravatar头像
-			String avatar = FunctionUtils.getGravatar(commentCustom.getCommentAuthorEmail());
-			commentCustom.setCommentAuthorAvatar(avatar);
-			commentListVo.setCommentCustom(commentCustomList.get(i));
-
-			commentListVoList.add(commentListVo);
-		}
-
-		return commentListVoList;
-	}
-
-	@Override
-	public List<CommentCustom> listComment(Integer status) throws Exception {
-		List<CommentCustom> commentCustomList = commentMapperCustom.listComment(status);
-		return commentCustomList;
-	}
-
-	@Override
-	public void deleteComment(Integer id) throws Exception {
-		commentMapper.deleteByPrimaryKey(id);
-	}
-
-	@Override
-	public void updateComment(Comment comment) throws Exception {
-		commentMapper.updateByPrimaryKeySelective(comment);
-	}
-
-	@Override
-	public Integer countComment(Integer status) throws Exception {
-		Integer commentCount = commentMapperCustom.countComment(status);
-		return commentCount;
-	}
-
-	@Override
-	public List<CommentListVo> listRecentComment(Integer limit) throws Exception {
-		List<CommentListVo> recentCommentList = new ArrayList<CommentListVo>();
-		List<CommentCustom> commentCustomList = commentMapperCustom.listRecentComment(limit);
-		for(int i=0;i<commentCustomList.size();i++) {
-			CommentListVo commentListVo = new CommentListVo();
-			//给每个评论用户添加头像
-			String avatar = FunctionUtils.getGravatar(commentCustomList.get(i).getCommentAuthorEmail());
-			CommentCustom commentCustom = commentCustomList.get(i);
-			commentCustom.setCommentAuthorAvatar(avatar);
-			commentListVo.setCommentCustom(commentCustom);
-			//找到评论对应的文章信息
-			ArticleCustom articleCustom = articleMapperCustom.getArticleById(1,commentCustom.getCommentArticleId());
-			commentListVo.setArticleCustom(articleCustom);
-
-			recentCommentList.add(commentListVo);
-		}
-
-		return recentCommentList;
-	}
-
-	@Override
-	public List<Comment> listChildComment(Integer id) throws Exception {
-		List<Comment> childCommentList = commentMapperCustom.listChildComment(id);
-		return childCommentList;
-	}
-
+    /**
+     * copy原有的分页信息，除数据
+     *
+     * @param ordinal
+     * @param <T>
+     * @return
+     */
+    private <T> PageInfo<T> copyPageInfo(PageInfo ordinal) {
+        PageInfo<T> returnBo = new PageInfo<T>();
+        returnBo.setPageSize(ordinal.getPageSize());
+        returnBo.setPageNum(ordinal.getPageNum());
+        returnBo.setEndRow(ordinal.getEndRow());
+        returnBo.setTotal(ordinal.getTotal());
+        returnBo.setHasNextPage(ordinal.isHasNextPage());
+        returnBo.setHasPreviousPage(ordinal.isHasPreviousPage());
+        returnBo.setIsFirstPage(ordinal.isIsFirstPage());
+        returnBo.setIsLastPage(ordinal.isIsLastPage());
+        returnBo.setNavigateFirstPage(ordinal.getNavigateFirstPage());
+        returnBo.setNavigateLastPage(ordinal.getNavigateLastPage());
+        returnBo.setNavigatepageNums(ordinal.getNavigatepageNums());
+        returnBo.setSize(ordinal.getSize());
+        returnBo.setPrePage(ordinal.getPrePage());
+        returnBo.setNextPage(ordinal.getNextPage());
+        return returnBo;
+    }
 }

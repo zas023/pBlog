@@ -1,81 +1,79 @@
 package com.copasso.blog.service.impl;
 
-import com.copasso.blog.dao.UserMapper;
-import com.copasso.blog.dao.custom.UserMapperCustom;
-import com.copasso.blog.model.bo.User;
-import com.copasso.blog.model.vo.UserCustom;
-import com.copasso.blog.service.UserService;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.copasso.blog.dao.UserVoMapper;
+import com.copasso.blog.exception.TipException;
+import com.copasso.blog.model.Vo.UserVo;
+import com.copasso.blog.service.IUserService;
+import com.copasso.blog.utils.BlogUtils;
+import com.copasso.blog.model.Vo.UserVoExample;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 用户管理
- * Created by 言曌 on 2017/8/24.
+ * Created by BlueT on 2017/3/3.
  */
 @Service
-public class UserServiceImpl implements UserService {
-	@Autowired
-	private UserMapperCustom userMapperCustom;
-	
-	@Autowired
-	private UserMapper userMapper;
-	
-	@Override
-	public List<UserCustom> listUser() throws Exception {
-		List<UserCustom> userCustomList = userMapperCustom.listUser();
-		for(int i=0;i<userCustomList.size();i++) {
-			Integer articleCount = userMapperCustom.countArticleByUser(userCustomList.get(i).getUserId());
-			userCustomList.get(i).setArticleCount(articleCount);
-		}
-		return userCustomList;
-	}
-	
-	@Override
-	public UserCustom getUserById(Integer id) throws Exception {
-		
-		User user = userMapper.selectByPrimaryKey(id);
-		UserCustom userCustom = new UserCustom();
-		BeanUtils.copyProperties(user,userCustom);
-		return userCustom;
-	}
-	
-	@Override
-	public void updateUser(User user) throws Exception {
-		userMapper.updateByPrimaryKeySelective(user);
-	}
-	
-	@Override
-	public void deleteUser(Integer id) throws Exception {
-		userMapper.deleteByPrimaryKey(id);
-	}
-	
-	@Override
-	public void insertUser(User user) throws Exception {
-		user.setUserRegisterTime(new Date());
-		userMapper.insertSelective(user);
-	}
+public class UserServiceImpl implements IUserService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
-	@Override
-	public User getUserByNameOrEmail(String str) throws Exception {
-		User user = userMapperCustom.getUserByNameOrEmail(str);
-		return user;
-	}
+    @Resource
+    private UserVoMapper userDao;
 
-	@Override
-	public User getUserByName(String name) throws Exception {
-		User user = userMapperCustom.getUserByName(name);
-		return user;
-	}
+    @Override
+    public Integer insertUser(UserVo userVo) {
+        Integer uid = null;
+        if (StringUtils.isNotBlank(userVo.getUsername()) && StringUtils.isNotBlank(userVo.getEmail())) {
+//            用户密码加密
+            String encodePwd = BlogUtils.MD5encode(userVo.getUsername() + userVo.getPassword());
+            userVo.setPassword(encodePwd);
+             userDao.insertSelective(userVo);
+        }
+        return userVo.getUid();
+    }
 
-	@Override
-	public User getUserByEmail(String email) throws Exception {
-		User user = userMapperCustom.getUserByEmail(email);
-		return user;
-	}
+    @Override
+    public UserVo queryUserById(Integer uid) {
+        UserVo userVo = null;
+        if (uid != null) {
+            userVo = userDao.selectByPrimaryKey(uid);
+        }
+        return userVo;
+    }
 
+    @Override
+    public UserVo login(String username, String password) {
+        if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
+            throw new TipException("用户名和密码不能为空");
+        }
+        UserVoExample example = new UserVoExample();
+        UserVoExample.Criteria criteria = example.createCriteria();
+        criteria.andUsernameEqualTo(username);
+        long count = userDao.countByExample(example);
+        if (count < 1) {
+            throw new TipException("不存在该用户");
+        }
+        String pwd = BlogUtils.MD5encode(username+password);
+        criteria.andPasswordEqualTo(pwd);
+        List<UserVo> userVos = userDao.selectByExample(example);
+        if (userVos.size()!=1) {
+            throw new TipException("用户名或密码错误");
+        }
+        return userVos.get(0);
+    }
 
+    @Override
+    public void updateByUid(UserVo userVo) {
+        if (null == userVo || null == userVo.getUid()) {
+            throw new TipException("userVo is null");
+        }
+        int i = userDao.updateByPrimaryKeySelective(userVo);
+        if(i!=1){
+            throw new TipException("update user by uid and retrun is not one");
+        }
+    }
 }

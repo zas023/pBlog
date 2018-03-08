@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="themes/partial/header::header(null,null)"></div>
+<body>
+<div class="main-content index-page clearfix">
+    <!--文章列表-->
+    <div class="post-lists">
+        <div class="post-lists-body">
+            <!--文章item start-->
+            <div class="post-list-item" th:each="article: ${articles.list}">
+                <!--item内容 start-->
+                <div class="post-list-item-container">
+                    <a th:href="${commons.permalink(article)}" class="item-thumb  bg-deepgrey"
+                       th:style="'background-image:url('+@{${commons.show_thumb(article)}}+');'">
+                        <div class="item-desc" th:text="${commons.intro(article.content,75)}+'...'">
+                            <p></p>
+                        </div>
+                    </a>
+                    <div class="item-slant reverse-slant bg-deepgrey"></div>
+                    <div class="item-slant"></div>
+                    <div class="item-label">
+                        <div class="item-title">
+                            <a th:href="${commons.permalink(article)}" th:text="${article.title}"></a>
+                        </div>
+                        <div class="item-meta clearfix">
+                            <div th:class="'item-meta-ico '+ ${commons.show_icon(article.cid)}"
+                                 th:style="'background: url('+@{/user/img/bg-ico.png}+');no-repeat;background-size: 40px auto;' ">
+                            </div>
+                            <div class="item-meta-cat" th:utext="${commons.show_categories(article.categories)}"></div>
+                            <div class="item-meta-time">
+                                <div class="post-data">
+                                    <time th:datetime="${commons.fmtdate(article.created)}" itemprop="datePublished"
+                                          th:text="${commons.fmtdate(article.created)}"></time>
+                                    /
+                                    <th:block th:text="${article.hits}"/>
+                                    浏览
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="item-meta-left clearfix">-->
+                            <!--<div class="item-meta-time">-->
+                                <!--<div class="post-data">-->
+                                    <!--<time th:datetime="${commons.fmtdate(article.created)}" itemprop="datePublished"-->
+                                          <!--th:text="'发布于 '+ ${commons.fmtdate(article.created)}"></time>-->
+                                    <!--/-->
+                                    <!--<th:block th:text="${article.hits}"/>-->
+                                    <!--浏览-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!--item内容 end-->
+            </div>
+            <!--文章item end-->
+        </div>
+    </div>
+    <!--文章列表 end-->
+    <!--页码 star-->
+    <div class="lists-navigator clearfix">
+        <div th:replace="comm/macros::pageNav(${articles},'←','→','page')"></div>
+    </div>
+    <!--页码 end-->
+</div>
+</body>
+<div th:replace="themes/partial/footer::footer"></div>
+</html>
