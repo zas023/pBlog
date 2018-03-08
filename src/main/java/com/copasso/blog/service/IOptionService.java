@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * options的接口
- * Created by BlueT on 2017/3/7.
+ * 网站选项Service接口
  */
 public interface IOptionService {
 

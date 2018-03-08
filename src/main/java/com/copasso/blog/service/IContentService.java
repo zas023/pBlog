@@ -5,15 +5,9 @@ import com.copasso.blog.model.Vo.ContentVoExample;
 import com.copasso.blog.model.Vo.ContentVo;
 
 /**
- * Created by Administrator on 2017/3/13 013.
+ * 文章Service接口
  */
 public interface IContentService {
-
-//    /**
-//     * 保存文章
-//     * @param contentVo contentVo
-//     */
-//    void insertContent(ContentVo contentVo);
 
     /**
      * 发布文章

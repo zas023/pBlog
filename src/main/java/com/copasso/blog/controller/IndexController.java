@@ -54,6 +54,14 @@ public class IndexController extends BaseController {
     @Resource
     private ISiteService siteService;
 
+    @ModelAttribute
+    public void init(HttpServletRequest request){
+        //最新文章
+        request.setAttribute("recent_articles", siteService.recentContents(8));
+        //最新评论
+        request.setAttribute("recent_comments", siteService.recentComments(8));
+    }
+
     /**
      * 首页
      *

@@ -5,7 +5,7 @@ import com.copasso.blog.model.Vo.LogVo;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/4.
+ * 日志Service接口
  */
 public interface ILogService {
 

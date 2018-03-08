@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="footer">
 <body>
 <footer class="footer bg-white">
+    <!--社交分享-->
     <div class="footer-social">
         <div class="footer-container clearfix">
             <div class="social-list">
@@ -30,29 +31,48 @@
             </div>
         </div>
     </div>
+
+    <!--底部元素-->
     <div class="footer-meta">
         <div class="footer-container">
+
             <div class="meta-item meta-copyright">
                 <div class="meta-copyright-info">
                     <div class="info-text">
-                        <a href="http://www.54tianzhisheng.cn" target="_blank" style="display: block;margin: 0 auto;" class="info-logo">
+                        <a href="" target="_blank" style="display: block;margin: 0 auto;" class="info-logo">
                             <img style="display: block;margin: 0 auto;" th:src="@{/user/img/logo.png}" th:alt="${commons.site_title()}"/>
                         </a>
                         <br/>
-                        <p>&copy; 版权所有 <a href="https://github.com/zhisheng17/blog" target="_blank"
-                                         rel="nofollow">My Blog</a> 保留一切权利
+                        <p>坑要一个一个踩,Bug一个一个改.</p>
+                        <br/>
+                        <p>Powered by
+                            <a href="https://github.com/zas023/pBlog" target="_blank" rel="nofollow">pBlog</a> &copy; 2018
                         </p>
                         <br/>
-                        <p>渝ICP备88888888号</p>
                     </div>
                 </div>
             </div>
 
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">最新文章</h3>
+                <li th:each="article : ${recent_articles}">
+                    <a th:href="${commons.permalink(article)}" th:text="${article.title}"></a>
+                </li>
+            </div>
+
+            <div class="meta-item meta-comments">
+                <h3 class="meta-title">最新评论</h3>
+                <li th:each="comm : ${recent_comments}">
+                    <a th:href="${commons.site_url('/article/')}+${comm.cid}+'#comment-'+${comm.coid}"
+                       th:text="${comm.author}+'：'+${comm.content}"></a>
+                </li>
+            </div>
         </div>
     </div>
 </footer>
 
-<th:block th:if="${is_post}">
+<!--目录-->
+<th:block th:if="${is_post}==true">
     <div id="directory-content" class="directory-content">
         <div id="directory"></div>
     </div>

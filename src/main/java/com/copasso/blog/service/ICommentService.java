@@ -6,7 +6,7 @@ import com.copasso.blog.model.Vo.CommentVoExample;
 import com.copasso.blog.model.Bo.CommentBo;
 
 /**
- * Created by BlueT on 2017/3/16.
+ * 评论Service接口
  */
 public interface ICommentService {
 

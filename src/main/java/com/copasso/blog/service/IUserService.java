@@ -3,7 +3,7 @@ package com.copasso.blog.service;
 import com.copasso.blog.model.Vo.UserVo;
 
 /**
- * Created by BlueT on 2017/3/3.
+ * 用户Service接口
  */
 public interface IUserService {
 

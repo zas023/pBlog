@@ -4,7 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.copasso.blog.model.Vo.AttachVo;
 
 /**
- * Created by wangq on 2017/3/20.
+ * 附件Service接口
  */
 public interface IAttachService {
     /**

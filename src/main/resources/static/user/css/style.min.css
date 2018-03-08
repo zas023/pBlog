@@ -1546,14 +1546,15 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     max-width: 960px;
     height: 250px;
     margin: 0 auto;
+    padding: 0 80px
 }
 
 .footer-meta .meta-item {
     position: relative;
-    width: 50%;
+    float: left;
+    width: 33.3333333%;
     min-height: 1px;
-    padding: 0 30px;
-    margin: 0 auto;
+    padding: 0 30px
 }
 
 .footer-meta .meta-copyright .info-logo img {
@@ -1565,8 +1566,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 13px;
     line-height: 20px;
     margin: 0;
-    color: #767676;
-    text-align: center;
+    color: #767676
 }
 
 .footer-meta .meta-copyright .info-text a {

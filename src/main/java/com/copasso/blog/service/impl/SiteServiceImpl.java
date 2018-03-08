@@ -32,7 +32,7 @@ import java.nio.charset.Charset;
 import java.util.*;
 
 /**
- * Created by BlueT on 2017/3/7.
+ * 站点服务接口实现
  */
 @Service
 public class SiteServiceImpl implements ISiteService {
@@ -51,6 +51,11 @@ public class SiteServiceImpl implements ISiteService {
     @Resource
     private MetaVoMapper metaDao;
 
+    /**
+     * 最新评论
+     * @param limit
+     * @return
+     */
     @Override
     public List<CommentVo> recentComments(int limit) {
         LOGGER.debug("Enter recentComments method:limit={}", limit);
@@ -65,6 +70,11 @@ public class SiteServiceImpl implements ISiteService {
         return byPage;
     }
 
+    /**
+     * 最新文章
+     * @param limit
+     * @return
+     */
     @Override
     public List<ContentVo> recentContents(int limit) {
         LOGGER.debug("Enter recentContents method");
