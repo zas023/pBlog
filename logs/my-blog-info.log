@@ -746,3 +746,233 @@ java.lang.NullPointerException
 2018-03-08 11:03:11.809 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
 2018-03-08 11:16:59.495 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
 2018-03-08 11:16:59.810 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:19:17.546 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:19:17.573 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:19:49.335 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:19:49.375 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:20:19.146 [http-nio-8080-exec-2] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-03-08 11:20:19.147 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-03-08 11:20:19.159 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-03-08 11:20:19.159 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-03-08 11:20:19.178 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-03-08 11:20:19.178 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-03-08 11:20:19.218 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-03-08 11:20:19.218 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-03-08 11:20:19.224 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-03-08 11:20:19.224 [http-nio-8080-exec-2] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-03-08 11:22:42.231 [http-nio-8080-exec-3] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-03-08 11:22:42.231 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-03-08 11:22:42.238 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-03-08 11:22:42.238 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-03-08 11:22:42.244 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-03-08 11:22:42.244 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-03-08 11:22:42.251 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-03-08 11:22:42.251 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-03-08 11:22:42.256 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-03-08 11:22:42.256 [http-nio-8080-exec-3] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-03-08 11:22:53.848 [http-nio-8080-exec-4] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-03-08 11:22:53.848 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-03-08 11:22:53.854 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-03-08 11:22:53.855 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-03-08 11:22:53.862 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-03-08 11:22:53.862 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-03-08 11:22:53.871 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-03-08 11:22:53.871 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-03-08 11:22:53.875 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-03-08 11:22:53.875 [http-nio-8080-exec-4] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-03-08 11:23:33.065 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Enter insertOption method:name=social_zhihu,value=
+2018-03-08 11:23:33.071 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Exit insertOption method.
+2018-03-08 11:23:33.072 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Enter insertOption method:name=social_github,value=https://github.com/zas023
+2018-03-08 11:23:33.075 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Exit insertOption method.
+2018-03-08 11:23:33.075 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Enter insertOption method:name=social_twitter,value=
+2018-03-08 11:23:33.078 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Exit insertOption method.
+2018-03-08 11:23:33.078 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Enter insertOption method:name=social_weibo,value=
+2018-03-08 11:23:33.082 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.OptionServiceImpl - Exit insertOption method.
+2018-03-08 11:24:14.483 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:24:14.495 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:25:13.656 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=16,mid=9
+2018-03-08 11:25:13.658 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:25:13.661 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=16,mid=10
+2018-03-08 11:25:13.664 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:26:49.026 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=9
+2018-03-08 11:26:49.028 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:26:49.034 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=23
+2018-03-08 11:26:49.036 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:26:49.040 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=22
+2018-03-08 11:26:49.042 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:27:05.668 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=9
+2018-03-08 11:27:05.670 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:27:05.673 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=23
+2018-03-08 11:27:05.675 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:27:05.678 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=22
+2018-03-08 11:27:05.680 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:27:19.428 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:27:19.436 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:28:35.939 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:28:35.945 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:29:13.589 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=9
+2018-03-08 11:29:13.592 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:29:13.595 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=23
+2018-03-08 11:29:13.597 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:29:13.600 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=17,mid=24
+2018-03-08 11:29:13.602 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:29:25.696 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:29:25.705 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:31:21.577 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=18,mid=25
+2018-03-08 11:31:21.579 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:31:21.583 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=18,mid=1
+2018-03-08 11:31:21.585 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:31:32.101 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:31:32.108 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:32:00.608 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:32:00.616 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:32:40.556 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=19,mid=25
+2018-03-08 11:32:40.558 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:33:33.689 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=21
+2018-03-08 11:33:33.691 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:33:33.695 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=9
+2018-03-08 11:33:33.696 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:33:33.703 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=26
+2018-03-08 11:33:33.705 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:33:33.708 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=10
+2018-03-08 11:33:33.710 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:33:39.580 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:33:39.590 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:33:45.242 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:33:45.253 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:34:09.675 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:34:09.690 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:34:40.209 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=21,mid=27
+2018-03-08 11:34:40.211 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:34:40.214 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=21,mid=25
+2018-03-08 11:34:40.216 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:35:07.197 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=22,mid=27
+2018-03-08 11:35:07.199 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:35:07.202 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=22,mid=25
+2018-03-08 11:35:07.204 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:35:40.377 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:35:40.391 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:37:20.214 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=23,mid=28
+2018-03-08 11:37:20.216 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:37:20.219 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=23,mid=25
+2018-03-08 11:37:20.221 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:38:07.325 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=24,mid=29
+2018-03-08 11:38:07.329 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:38:07.336 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=24,mid=25
+2018-03-08 11:38:07.341 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:38:50.802 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=25,mid=31
+2018-03-08 11:38:50.806 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:38:50.814 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=25,mid=30
+2018-03-08 11:38:50.818 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:39:17.065 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=26,mid=31
+2018-03-08 11:39:17.069 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:39:17.076 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=26,mid=30
+2018-03-08 11:39:17.079 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:39:46.023 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=27,mid=31
+2018-03-08 11:39:46.027 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:39:46.034 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=27,mid=30
+2018-03-08 11:39:46.037 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:40:19.067 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=28,mid=31
+2018-03-08 11:40:19.071 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:40:19.078 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=28,mid=30
+2018-03-08 11:40:19.082 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:08.790 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=9
+2018-03-08 11:41:08.794 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:08.803 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=32
+2018-03-08 11:41:08.807 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:08.817 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=33
+2018-03-08 11:41:08.841 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:08.845 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=10
+2018-03-08 11:41:08.847 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:14.653 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:41:14.663 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:41:47.453 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=9
+2018-03-08 11:41:47.454 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:47.457 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=32
+2018-03-08 11:41:47.459 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:47.462 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=33
+2018-03-08 11:41:47.464 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:41:47.468 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=29,mid=10
+2018-03-08 11:41:47.470 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:43:06.729 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:43:06.739 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:43:31.818 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=28,mid=31
+2018-03-08 11:43:31.820 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:43:31.823 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=28,mid=30
+2018-03-08 11:43:31.824 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:43:47.102 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:43:47.116 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:44:01.730 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:44:01.736 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:44:43.261 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=27,mid=31
+2018-03-08 11:44:43.263 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:44:43.265 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=27,mid=30
+2018-03-08 11:44:43.267 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:45:12.922 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=26,mid=31
+2018-03-08 11:45:12.926 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:45:12.935 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=26,mid=30
+2018-03-08 11:45:12.938 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:45:14.874 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:45:14.881 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:45:54.278 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=26,mid=31
+2018-03-08 11:45:54.282 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:45:54.288 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=26,mid=30
+2018-03-08 11:45:54.292 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:46:18.662 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:46:18.671 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:46:42.633 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=25,mid=31
+2018-03-08 11:46:42.635 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:46:42.637 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=25,mid=30
+2018-03-08 11:46:42.639 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:46:46.507 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 11:46:46.515 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 11:49:17.178 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=24,mid=29
+2018-03-08 11:49:17.179 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 11:49:17.182 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=24,mid=25
+2018-03-08 11:49:17.184 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:17:00.959 [http-nio-8080-exec-9] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-03-08 12:17:00.960 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-03-08 12:17:00.973 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-03-08 12:17:00.973 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-03-08 12:17:01.002 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-03-08 12:17:01.002 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-03-08 12:17:01.032 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-03-08 12:17:01.032 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-03-08 12:17:01.041 [http-nio-8080-exec-9] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-03-08 12:17:01.041 [http-nio-8080-exec-9] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-03-08 12:17:35.833 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=22,mid=27
+2018-03-08 12:17:35.835 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:17:35.840 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=22,mid=25
+2018-03-08 12:17:35.843 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:17:53.355 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 12:17:53.381 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 12:18:18.963 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=21,mid=27
+2018-03-08 12:18:18.966 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:18:18.971 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=21,mid=25
+2018-03-08 12:18:18.973 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:18:24.085 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 12:18:24.096 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 12:18:54.900 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=21
+2018-03-08 12:18:54.902 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:18:54.907 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=9
+2018-03-08 12:18:54.910 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:18:54.914 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=26
+2018-03-08 12:18:54.916 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:18:54.920 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Enter countById method:cid=20,mid=10
+2018-03-08 12:18:54.922 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.RelationshipServiceImpl - Exit countById method return num=0
+2018-03-08 12:43:12.714 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 12:43:12.733 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 12:43:16.704 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 12:43:16.728 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 12:53:56.742 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 12:53:56.754 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-08 12:54:27.745 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getArchives method
+2018-03-08 12:54:27.911 [http-nio-8080-exec-4] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getArchives method
+2018-03-08 12:54:46.465 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getArchives method
+2018-03-08 12:54:46.479 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getArchives method
+2018-03-08 12:54:52.111 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getArchives method
+2018-03-08 12:54:52.130 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getArchives method
+2018-03-08 12:55:04.820 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getArchives method
+2018-03-08 12:55:04.841 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getArchives method
+2018-03-08 12:55:09.369 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-08 12:55:09.384 [http-nio-8080-exec-8] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
