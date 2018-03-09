@@ -11,7 +11,7 @@ import com.copasso.blog.model.Vo.ContentVoExample;
 import com.copasso.blog.service.IContentService;
 import com.copasso.blog.service.IMetaService;
 import com.copasso.blog.service.IRelationshipService;
-import com.copasso.blog.utils.DateKit;
+import com.copasso.blog.utils.DateUtils;
 import com.copasso.blog.utils.BlogUtils;
 import com.copasso.blog.utils.Tools;
 import com.vdurmont.emoji.EmojiParser;
@@ -80,7 +80,7 @@ public class ContentServiceImpl implements IContentService {
 
         contents.setContent(EmojiParser.parseToAliases(contents.getContent()));
 
-        int time = DateKit.getCurrentUnixTime();
+        int time = DateUtils.getCurrentUnixTime();
         contents.setCreated(time);
         contents.setModified(time);
         contents.setHits(0);
@@ -209,7 +209,7 @@ public class ContentServiceImpl implements IContentService {
         if (StringUtils.isBlank(contents.getSlug())) {
             contents.setSlug(null);
         }
-        int time = DateKit.getCurrentUnixTime();
+        int time = DateUtils.getCurrentUnixTime();
         contents.setModified(time);
         Integer cid = contents.getCid();
         contents.setContent(EmojiParser.parseToAliases(contents.getContent()));

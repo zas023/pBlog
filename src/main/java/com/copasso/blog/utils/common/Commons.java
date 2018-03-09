@@ -1,7 +1,8 @@
-package com.copasso.blog.utils;
+package com.copasso.blog.utils.common;
 
-
-import com.copasso.blog.service.impl.SiteServiceImpl;
+import com.copasso.blog.utils.BlogUtils;
+import com.copasso.blog.utils.DateUtils;
+import com.copasso.blog.utils.UUID;
 import com.github.pagehelper.PageInfo;
 import com.copasso.blog.service.ISiteService;
 import com.vdurmont.emoji.EmojiParser;
@@ -13,7 +14,6 @@ import com.copasso.blog.model.Vo.ContentVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -25,8 +25,6 @@ import java.util.regex.Pattern;
 
 /**
  * 主题公共函数
- * <p>
- * Created by 13 on 2017/2/21.
  */
 @Component
 public final class Commons {
@@ -221,7 +219,7 @@ public final class Commons {
      */
     public static String fmtdate(Integer unixTime, String patten) {
         if (null != unixTime && StringUtils.isNotBlank(patten)) {
-            return DateKit.formatDateByUnixTime(unixTime, patten);
+            return DateUtils.formatDateByUnixTime(unixTime, patten);
         }
         return "";
     }

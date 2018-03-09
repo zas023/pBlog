@@ -3,7 +3,7 @@ package com.copasso.blog.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.copasso.blog.exception.TipException;
-import com.copasso.blog.utils.DateKit;
+import com.copasso.blog.utils.DateUtils;
 import com.copasso.blog.utils.BlogUtils;
 import com.copasso.blog.dao.CommentVoMapper;
 import com.copasso.blog.model.Bo.CommentBo;
@@ -59,7 +59,7 @@ public class CommentServiceImpl implements ICommentService {
             throw new TipException("不存在的文章");
         }
         comments.setOwnerId(contents.getAuthorId());
-        comments.setCreated(DateKit.getCurrentUnixTime());
+        comments.setCreated(DateUtils.getCurrentUnixTime());
         commentMapper.insertSelective(comments);
 
         ContentVo temp = new ContentVo();

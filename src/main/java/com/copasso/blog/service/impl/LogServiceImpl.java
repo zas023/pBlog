@@ -3,7 +3,7 @@ package com.copasso.blog.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.copasso.blog.dao.LogVoMapper;
 import com.copasso.blog.service.ILogService;
-import com.copasso.blog.utils.DateKit;
+import com.copasso.blog.utils.DateUtils;
 import com.copasso.blog.constant.WebConst;
 import com.copasso.blog.model.Vo.LogVo;
 import com.copasso.blog.model.Vo.LogVoExample;
@@ -37,7 +37,7 @@ public class LogServiceImpl implements ILogService {
         logs.setData(data);
         logs.setIp(ip);
         logs.setAuthorId(authorId);
-        logs.setCreated(DateKit.getCurrentUnixTime());
+        logs.setCreated(DateUtils.getCurrentUnixTime());
         logDao.insert(logs);
     }
 

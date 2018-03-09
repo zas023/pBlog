@@ -1270,3 +1270,15 @@ java.lang.NullPointerException
 2018-03-08 20:46:42.041 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
 2018-03-08 20:46:42.041 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
 2018-03-08 20:46:42.053 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-09 15:55:03.361 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-03-09 15:55:03.561 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-03-09 15:55:03.561 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=8
+2018-03-09 15:55:03.586 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-03-09 15:55:03.600 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-09 15:55:03.649 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method
+2018-03-09 16:03:10.639 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-03-09 16:03:10.653 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-03-09 16:03:10.653 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=8
+2018-03-09 16:03:10.663 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-03-09 16:03:10.663 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Enter getContents method
+2018-03-09 16:03:10.680 [http-nio-8080-exec-2] DEBUG com.copasso.blog.service.impl.ContentServiceImpl - Exit getContents method

@@ -8,7 +8,7 @@ import com.copasso.blog.model.Bo.RestResponseBo;
 import com.copasso.blog.model.Vo.UserVo;
 import com.copasso.blog.service.ILogService;
 import com.copasso.blog.service.IUserService;
-import com.copasso.blog.utils.Commons;
+import com.copasso.blog.utils.common.Commons;
 import com.copasso.blog.utils.BlogUtils;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;

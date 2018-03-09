@@ -7,7 +7,7 @@ import com.copasso.blog.exception.TipException;
 import com.copasso.blog.model.Bo.ArchiveBo;
 import com.copasso.blog.model.Vo.*;
 import com.copasso.blog.service.ISiteService;
-import com.copasso.blog.utils.DateKit;
+import com.copasso.blog.utils.DateUtils;
 import com.copasso.blog.utils.BlogUtils;
 import com.copasso.blog.utils.backup.Backup;
 import com.copasso.blog.constant.WebConst;
@@ -103,7 +103,7 @@ public class SiteServiceImpl implements ISiteService {
             String bkAttachDir = AttachController.CLASSPATH + "upload";
             String bkThemesDir = AttachController.CLASSPATH + "templates/themes";
 
-            String fname = DateKit.dateFormat(new Date(), fmt) + "_" + BlogUtils.getRandomNumber(5) + ".zip";
+            String fname = DateUtils.dateFormat(new Date(), fmt) + "_" + BlogUtils.getRandomNumber(5) + ".zip";
 
             String attachPath = bk_path + "/" + "attachs_" + fname;
             String themesPath = bk_path + "/" + "themes_" + fname;
@@ -123,7 +123,7 @@ public class SiteServiceImpl implements ISiteService {
                     file.mkdirs();
                 }
             }
-            String sqlFileName = "tale_" + DateKit.dateFormat(new Date(), fmt) + "_" + BlogUtils.getRandomNumber(5) + ".sql";
+            String sqlFileName = "tale_" + DateUtils.dateFormat(new Date(), fmt) + "_" + BlogUtils.getRandomNumber(5) + ".sql";
             String zipFile = sqlFileName.replace(".sql", ".zip");
 
             Backup backup = new Backup(BlogUtils.getNewDataSource().getConnection());
@@ -196,9 +196,9 @@ public class SiteServiceImpl implements ISiteService {
                 ContentVoExample.Criteria criteria = example.createCriteria().andTypeEqualTo(Types.ARTICLE.getType()).andStatusEqualTo(Types.PUBLISH.getType());
                 example.setOrderByClause("created desc");
                 String date = archive.getDate();
-                Date sd = DateKit.dateFormat(date, "yyyy年MM月");
-                int start = DateKit.getUnixTimeByDate(sd);
-                int end = DateKit.getUnixTimeByDate(DateKit.dateAdd(DateKit.INTERVAL_MONTH, sd, 1)) - 1;
+                Date sd = DateUtils.dateFormat(date, "yyyy年MM月");
+                int start = DateUtils.getUnixTimeByDate(sd);
+                int end = DateUtils.getUnixTimeByDate(DateUtils.dateAdd(DateUtils.INTERVAL_MONTH, sd, 1)) - 1;
                 criteria.andCreatedGreaterThan(start);
                 criteria.andCreatedLessThan(end);
                 List<ContentVo> contentss = contentDao.selectByExample(example);

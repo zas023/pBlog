@@ -1,7 +1,8 @@
-package com.copasso.blog.utils;
+package com.copasso.blog.utils.common;
 
 
 import com.copasso.blog.model.Vo.MetaVo;
+import com.copasso.blog.utils.Tools;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 

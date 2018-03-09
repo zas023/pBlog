@@ -4,6 +4,7 @@ import com.copasso.blog.exception.TipException;
 import com.copasso.blog.constant.WebConst;
 import com.copasso.blog.controller.admin.AttachController;
 import com.copasso.blog.model.Vo.UserVo;
+import com.copasso.blog.utils.common.Commons;
 import org.apache.commons.lang3.StringUtils;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
@@ -422,7 +423,7 @@ public class BlogUtils {
     }
 
     public static String getFileKey(String name) {
-        String prefix = "/upload/" + DateKit.dateFormat(new Date(), "yyyy/MM");
+        String prefix = "/upload/" + DateUtils.dateFormat(new Date(), "yyyy/MM");
         if (!new File(AttachController.CLASSPATH + prefix).exists()) {
             new File(AttachController.CLASSPATH + prefix).mkdirs();
         }

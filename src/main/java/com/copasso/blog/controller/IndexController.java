@@ -12,7 +12,7 @@ import com.copasso.blog.model.Vo.CommentVo;
 import com.copasso.blog.model.Vo.MetaVo;
 import com.copasso.blog.service.IMetaService;
 import com.copasso.blog.service.ISiteService;
-import com.copasso.blog.utils.PatternKit;
+import com.copasso.blog.utils.PatternUtils;
 import com.copasso.blog.utils.BlogUtils;
 import com.vdurmont.emoji.EmojiParser;
 import com.copasso.blog.model.Bo.CommentBo;
@@ -193,7 +193,7 @@ public class IndexController extends BaseController {
             return RestResponseBo.fail("请输入正确的邮箱格式");
         }
 
-        if (StringUtils.isNotBlank(url) && !PatternKit.isURL(url)) {
+        if (StringUtils.isNotBlank(url) && !PatternUtils.isURL(url)) {
             return RestResponseBo.fail("请输入正确的URL格式");
         }
 

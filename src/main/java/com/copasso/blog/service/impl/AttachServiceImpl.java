@@ -3,7 +3,7 @@ package com.copasso.blog.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.copasso.blog.dao.AttachVoMapper;
-import com.copasso.blog.utils.DateKit;
+import com.copasso.blog.utils.DateUtils;
 import com.copasso.blog.model.Vo.AttachVo;
 import com.copasso.blog.model.Vo.AttachVoExample;
 import com.copasso.blog.service.IAttachService;
@@ -48,7 +48,7 @@ public class AttachServiceImpl implements IAttachService {
         attach.setAuthorId(author);
         attach.setFkey(fkey);
         attach.setFtype(ftype);
-        attach.setCreated(DateKit.getCurrentUnixTime());
+        attach.setCreated(DateUtils.getCurrentUnixTime());
         attachDao.insertSelective(attach);
     }
 

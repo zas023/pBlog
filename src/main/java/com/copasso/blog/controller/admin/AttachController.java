@@ -11,7 +11,7 @@ import com.copasso.blog.model.Vo.AttachVo;
 import com.copasso.blog.model.Vo.UserVo;
 import com.copasso.blog.service.IAttachService;
 import com.copasso.blog.service.ILogService;
-import com.copasso.blog.utils.Commons;
+import com.copasso.blog.utils.common.Commons;
 import com.copasso.blog.utils.BlogUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

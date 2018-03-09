@@ -7,9 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * Created by Administrator on 2017/3/10 010.
+ * 日期工具类
  */
-public class DateKit {
+public class DateUtils {
     public static final int INTERVAL_DAY = 1;
     public static final int INTERVAL_WEEK = 2;
     public static final int INTERVAL_MONTH = 3;
@@ -37,7 +37,7 @@ public class DateKit {
         }
     };
 
-    public DateKit() {
+    public DateUtils() {
     }
 
     public static boolean isToday(Date date) {
