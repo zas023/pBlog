@@ -61,7 +61,7 @@
                                     </div>
                                     <!--item时间信息-->
                                     <div class="comment-meta">
-                                        <time class="comment-time" th:text="${commons.fmtdate(comment.created)}"></time>
+                                        <time class="comment-time" th:text="${commons.fmtdate(comment.created,'yyyy-MM-dd hh:mm:ss')}"></time>
                                         <span class="comment-reply">
                                             <a rel="nofollow" coId="${comment.coid}"
                                                th:onclick="'TaleComment.reply(\''+${comment.coid}+'\');'">回复</a>
@@ -95,7 +95,9 @@
                                                             <p th:utext="${commons.article(child.content)}"></p>
                                                         </div>
                                                         <div class="comment-meta">
-                                                            <time class="comment-time" th:text="${commons.fmtdate(child.created)}"></time>
+                                                            <time class="comment-time"
+                                                                  th:text="${commons.fmtdate(child.created,'yyyy-MM-dd hh:mm:ss')}">
+                                                            </time>
                                                             <span class="comment-reply">
                                                                 <a rel="nofollow"
                                                                    th:onclick="'TaleComment.reply(\''+${child.coid}+'\');'">回复</a>

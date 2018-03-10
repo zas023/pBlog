@@ -6,7 +6,7 @@ import com.copasso.blog.model.Vo.MetaVo;
 import java.util.List;
 
 /**
- * 分类信息service接口
+ * 材料service接口
  */
 public interface IMetaService {
     /**

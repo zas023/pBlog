@@ -24,11 +24,23 @@ public abstract class BaseController {
         return THEME + "/" + viewName;
     }
 
+    /**
+     * 页面的title
+     * @param request
+     * @param title
+     * @return
+     */
     public BaseController title(HttpServletRequest request, String title) {
         request.setAttribute("title", title);
         return this;
     }
 
+    /**
+     * 页面的keywords
+     * @param request
+     * @param keywords
+     * @return
+     */
     public BaseController keywords(HttpServletRequest request, String keywords) {
         request.setAttribute("keywords", keywords);
         return this;
@@ -43,10 +55,19 @@ public abstract class BaseController {
         return BlogUtils.getLoginUser(request);
     }
 
+    /**
+     * 获取请求绑定的登录对象的Id
+     * @param request
+     * @return
+     */
     public Integer getUid(HttpServletRequest request){
         return this.user(request).getUid();
     }
 
+    /**
+     * 返回404页面
+     * @return
+     */
     public String render_404() {
         return "comm/error_404";
     }

@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 附件、文件.
+ * 附件、文件Service
  */
 @Service
 public class AttachServiceImpl implements IAttachService {

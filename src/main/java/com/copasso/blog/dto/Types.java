@@ -1,5 +1,8 @@
 package com.copasso.blog.dto;
 
+/**
+ * 类型枚举
+ */
 public enum Types {
     TAG("tag"),
     CATEGORY("category"),

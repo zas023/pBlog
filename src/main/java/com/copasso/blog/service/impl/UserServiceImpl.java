@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/3.
+ * 用户Service
  */
 @Service
 public class UserServiceImpl implements IUserService {

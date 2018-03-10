@@ -5,7 +5,7 @@ import com.copasso.blog.model.Vo.RelationshipVoKey;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/18.
+ * 材料metas与文章关系Service接口
  */
 public interface IRelationshipService {
     /**

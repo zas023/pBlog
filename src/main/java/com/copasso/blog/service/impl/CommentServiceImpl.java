@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 评论
+ * 评论Service
  */
 @Service
 public class CommentServiceImpl implements ICommentService {
@@ -34,6 +34,10 @@ public class CommentServiceImpl implements ICommentService {
     @Resource
     private IContentService contentService;
 
+    /**
+     * 添加评论
+     * @param comments
+     */
     @Override
     public void insertComment(CommentVo comments) {
         if (null == comments) {

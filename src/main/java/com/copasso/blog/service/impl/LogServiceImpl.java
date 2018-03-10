@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by BlueT on 2017/3/4.
+ * 日志Service
  */
 @Service
 public class LogServiceImpl implements ILogService {

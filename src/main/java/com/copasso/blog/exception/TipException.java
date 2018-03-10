@@ -1,5 +1,8 @@
 package com.copasso.blog.exception;
 
+/**
+ * 自定义通用异常
+ */
 public class TipException extends RuntimeException {
 
     public TipException() {

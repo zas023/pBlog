@@ -30,9 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Tale工具类
- * <p>
- * Created by 13 on 2017/2/21.
+ * Blog的工具类
  */
 public class BlogUtils {
     private static final Logger LOGGER = LoggerFactory.getLogger(BlogUtils.class);
@@ -78,7 +76,7 @@ public class BlogUtils {
     }
 
     /**
-     * jdbc:mysql://127.0.0.1:3306/tale?useUnicode=true&characterEncoding=utf-8&useSSL=false 保存jdbc数据到文件中
+     * jdbc:mysql://127.0.0.1:3306/tblog?useUnicode=true&characterEncoding=utf-8&useSSL=false 保存jdbc数据到文件中
      *
      * @param url      数据库连接地址 127.0.0.1:3306
      * @param dbName   数据库名称
@@ -203,7 +201,7 @@ public class BlogUtils {
     }
 
     /**
-     * 返回当前登录用户
+     * 获取当前请求登录的用户
      *
      * @return
      */
