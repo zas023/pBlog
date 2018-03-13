@@ -30,9 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 附件管理
- *
- * Created by 13 on 2017/2/21.
+ * 附件管理Controller
  */
 @Controller
 @RequestMapping("admin/attach")

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by wangq on 2017/3/20.
+ * 站点设置管理Controller
  */
 @Controller
 @RequestMapping("/admin/setting")

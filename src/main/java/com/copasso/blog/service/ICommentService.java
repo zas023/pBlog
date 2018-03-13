@@ -44,7 +44,7 @@ public interface ICommentService {
 
 
     /**
-     * 删除评论，暂时没用
+     * 删除评论
      * @param coid
      * @param cid
      * @throws Exception

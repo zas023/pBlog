@@ -21,7 +21,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by 13 on 2017/2/26.
+ * 评论管理Controller
  */
 @Controller
 @RequestMapping("admin/comments")

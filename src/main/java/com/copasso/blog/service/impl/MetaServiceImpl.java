@@ -23,14 +23,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 材料Service
+ * 项目Service
  */
 @Service
 public class MetaServiceImpl implements IMetaService {
     private static final Logger LOGGER = LoggerFactory.getLogger(MetaServiceImpl.class);
 
     @Resource
-    private MetaVoMapper metaDao;
+    private MetaVoMapper metaMapper;
 
     @Resource
     private IRelationshipService relationshipService;
@@ -41,14 +41,14 @@ public class MetaServiceImpl implements IMetaService {
     @Override
     public MetaDto getMeta(String type, String name) {
         if (StringUtils.isNotBlank(type) && StringUtils.isNotBlank(name)) {
-            return metaDao.selectDtoByNameAndType(name, type);
+            return metaMapper.selectDtoByNameAndType(name, type);
         }
         return null;
     }
 
     @Override
     public Integer countMeta(Integer mid) {
-        return metaDao.countWithSql(mid);
+        return metaMapper.countWithSql(mid);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class MetaServiceImpl implements IMetaService {
             MetaVoExample metaVoExample = new MetaVoExample();
             metaVoExample.setOrderByClause("sort desc, mid desc");
             metaVoExample.createCriteria().andTypeEqualTo(types);
-            return metaDao.selectByExample(metaVoExample);
+            return metaMapper.selectByExample(metaVoExample);
         }
         return null;
     }
@@ -75,19 +75,19 @@ public class MetaServiceImpl implements IMetaService {
             paraMap.put("type", type);
             paraMap.put("order", orderby);
             paraMap.put("limit", limit);
-            return metaDao.selectFromSql(paraMap);
+            return metaMapper.selectFromSql(paraMap);
         }
         return null;
     }
 
     @Override
     public void delete(int mid) {
-        MetaVo metas = metaDao.selectByPrimaryKey(mid);
+        MetaVo metas = metaMapper.selectByPrimaryKey(mid);
         if (null != metas) {
             String type = metas.getType();
             String name = metas.getName();
 
-            metaDao.deleteByPrimaryKey(mid);
+            metaMapper.deleteByPrimaryKey(mid);
 
             List<RelationshipVoKey> rlist = relationshipService.getRelationshipById(null, mid);
             if (null != rlist) {
@@ -115,7 +115,7 @@ public class MetaServiceImpl implements IMetaService {
         if (StringUtils.isNotBlank(type) && StringUtils.isNotBlank(name)) {
             MetaVoExample metaVoExample = new MetaVoExample();
             metaVoExample.createCriteria().andTypeEqualTo(type).andNameEqualTo(name);
-            List<MetaVo> metaVos = metaDao.selectByExample(metaVoExample);
+            List<MetaVo> metaVos = metaMapper.selectByExample(metaVoExample);
             MetaVo metas;
             if (metaVos.size() != 0) {
                 throw new TipException("已经存在该项");
@@ -123,14 +123,14 @@ public class MetaServiceImpl implements IMetaService {
                 metas = new MetaVo();
                 metas.setName(name);
                 if (null != mid) {
-                    MetaVo original = metaDao.selectByPrimaryKey(mid);
+                    MetaVo original = metaMapper.selectByPrimaryKey(mid);
                     metas.setMid(mid);
-                    metaDao.updateByPrimaryKeySelective(metas);
+                    metaMapper.updateByPrimaryKeySelective(metas);
 //                    更新原有文章的categories
                     contentService.updateCategory(original.getName(),name);
                 } else {
                     metas.setType(type);
-                    metaDao.insertSelective(metas);
+                    metaMapper.insertSelective(metas);
                 }
             }
         }
@@ -152,7 +152,7 @@ public class MetaServiceImpl implements IMetaService {
     private void saveOrUpdate(Integer cid, String name, String type) {
         MetaVoExample metaVoExample = new MetaVoExample();
         metaVoExample.createCriteria().andTypeEqualTo(type).andNameEqualTo(name);
-        List<MetaVo> metaVos = metaDao.selectByExample(metaVoExample);
+        List<MetaVo> metaVos = metaMapper.selectByExample(metaVoExample);
 
         int mid;
         MetaVo metas;
@@ -166,7 +166,7 @@ public class MetaServiceImpl implements IMetaService {
             metas.setSlug(name);
             metas.setName(name);
             metas.setType(type);
-            metaDao.insertSelective(metas);
+            metaMapper.insertSelective(metas);
             mid = metas.getMid();
         }
         if (mid != 0) {
@@ -198,14 +198,14 @@ public class MetaServiceImpl implements IMetaService {
     @Override
     public void saveMeta(MetaVo metas) {
         if (null != metas) {
-            metaDao.insertSelective(metas);
+            metaMapper.insertSelective(metas);
         }
     }
 
     @Override
     public void update(MetaVo metas) {
         if (null != metas && null != metas.getMid()) {
-            metaDao.updateByPrimaryKeySelective(metas);
+            metaMapper.updateByPrimaryKeySelective(metas);
         }
     }
 }

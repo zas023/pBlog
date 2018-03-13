@@ -25,8 +25,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * 用户后台登录/登出
- * Created by BlueT on 2017/3/11.
+ * 用户后台管理Controller
  */
 @Controller
 @RequestMapping("/admin")

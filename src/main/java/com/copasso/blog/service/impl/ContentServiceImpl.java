@@ -32,10 +32,10 @@ public class ContentServiceImpl implements IContentService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ContentServiceImpl.class);
 
     @Resource
-    private ContentVoMapper contentDao;
+    private ContentVoMapper contentMapper;
 
     @Resource
-    private MetaVoMapper metaDao;
+    private MetaVoMapper metaMapper;
 
     @Resource
     private IRelationshipService relationshipService;
@@ -72,7 +72,7 @@ public class ContentServiceImpl implements IContentService {
             if (!BlogUtils.isPath(contents.getSlug())) throw new TipException("您输入的路径不合法");
             ContentVoExample contentVoExample = new ContentVoExample();
             contentVoExample.createCriteria().andTypeEqualTo(contents.getType()).andStatusEqualTo(contents.getSlug());
-            long count = contentDao.countByExample(contentVoExample);
+            long count = contentMapper.countByExample(contentVoExample);
             if (count > 0) throw new TipException("该路径已经存在，请重新输入");
         } else {
             contents.setSlug(null);
@@ -88,9 +88,10 @@ public class ContentServiceImpl implements IContentService {
 
         String tags = contents.getTags();
         String categories = contents.getCategories();
-        contentDao.insert(contents);
+        contentMapper.insert(contents);
         Integer cid = contents.getCid();
 
+        //保存文章项目
         metasService.saveMetas(cid, tags, Types.TAG.getType());
         metasService.saveMetas(cid, categories, Types.CATEGORY.getType());
     }
@@ -102,7 +103,7 @@ public class ContentServiceImpl implements IContentService {
         example.setOrderByClause("created desc");
         example.createCriteria().andTypeEqualTo(Types.ARTICLE.getType()).andStatusEqualTo(Types.PUBLISH.getType());
         PageHelper.startPage(p, limit);
-        List<ContentVo> data = contentDao.selectByExampleWithBLOBs(example);
+        List<ContentVo> data = contentMapper.selectByExampleWithBLOBs(example);
         PageInfo<ContentVo> pageInfo = new PageInfo<>(data);
         LOGGER.debug("Exit getContents method");
         return pageInfo;
@@ -112,16 +113,16 @@ public class ContentServiceImpl implements IContentService {
     public ContentVo getContents(String id) {
         if (StringUtils.isNotBlank(id)) {
             if (Tools.isNumber(id)) {
-                ContentVo contentVo = contentDao.selectByPrimaryKey(Integer.valueOf(id));
+                ContentVo contentVo = contentMapper.selectByPrimaryKey(Integer.valueOf(id));
                 if (contentVo != null) {
                     contentVo.setHits(contentVo.getHits() + 1);
-                    contentDao.updateByPrimaryKey(contentVo);
+                    contentMapper.updateByPrimaryKey(contentVo);
                 }
                 return contentVo;
             } else {
                 ContentVoExample contentVoExample = new ContentVoExample();
                 contentVoExample.createCriteria().andSlugEqualTo(id);
-                List<ContentVo> contentVos = contentDao.selectByExampleWithBLOBs(contentVoExample);
+                List<ContentVo> contentVos = contentMapper.selectByExampleWithBLOBs(contentVoExample);
                 if (contentVos.size() != 1) {
                     throw new TipException("query content by id and return is not one");
                 }
@@ -134,15 +135,15 @@ public class ContentServiceImpl implements IContentService {
     @Override
     public void updateContentByCid(ContentVo contentVo) {
         if (null != contentVo && null != contentVo.getCid()) {
-            contentDao.updateByPrimaryKeySelective(contentVo);
+            contentMapper.updateByPrimaryKeySelective(contentVo);
         }
     }
 
     @Override
     public PageInfo<ContentVo> getArticles(Integer mid, int page, int limit) {
-        int total = metaDao.countWithSql(mid);
+        int total = metaMapper.countWithSql(mid);
         PageHelper.startPage(page, limit);
-        List<ContentVo> list = contentDao.findByCatalog(mid);
+        List<ContentVo> list = contentMapper.findByCatalog(mid);
         PageInfo<ContentVo> paginator = new PageInfo<>(list);
         paginator.setTotal(total);
         return paginator;
@@ -157,14 +158,14 @@ public class ContentServiceImpl implements IContentService {
         criteria.andStatusEqualTo(Types.PUBLISH.getType());
         criteria.andTitleLike("%" + keyword + "%");
         contentVoExample.setOrderByClause("created desc");
-        List<ContentVo> contentVos = contentDao.selectByExampleWithBLOBs(contentVoExample);
+        List<ContentVo> contentVos = contentMapper.selectByExampleWithBLOBs(contentVoExample);
         return new PageInfo<>(contentVos);
     }
 
     @Override
     public PageInfo<ContentVo> getArticlesWithpage(ContentVoExample commentVoExample, Integer page, Integer limit) {
         PageHelper.startPage(page, limit);
-        List<ContentVo> contentVos = contentDao.selectByExampleWithBLOBs(commentVoExample);
+        List<ContentVo> contentVos = contentMapper.selectByExampleWithBLOBs(commentVoExample);
         return new PageInfo<>(contentVos);
     }
 
@@ -172,7 +173,7 @@ public class ContentServiceImpl implements IContentService {
     public void deleteByCid(Integer cid) {
         ContentVo contents = this.getContents(cid + "");
         if (null != contents) {
-            contentDao.deleteByPrimaryKey(cid);
+            contentMapper.deleteByPrimaryKey(cid);
             relationshipService.deleteById(cid, null);
         }
     }
@@ -183,7 +184,7 @@ public class ContentServiceImpl implements IContentService {
         contentVo.setCategories(newCatefory);
         ContentVoExample example = new ContentVoExample();
         example.createCriteria().andCategoriesEqualTo(ordinal);
-        contentDao.updateByExampleSelective(contentVo, example);
+        contentMapper.updateByExampleSelective(contentVo, example);
     }
 
     @Override
@@ -214,7 +215,7 @@ public class ContentServiceImpl implements IContentService {
         Integer cid = contents.getCid();
         contents.setContent(EmojiParser.parseToAliases(contents.getContent()));
 
-        contentDao.updateByPrimaryKeySelective(contents);
+        contentMapper.updateByPrimaryKeySelective(contents);
         relationshipService.deleteById(cid, null);
         metasService.saveMetas(cid, contents.getTags(), Types.TAG.getType());
         metasService.saveMetas(cid, contents.getCategories(), Types.CATEGORY.getType());

@@ -62,10 +62,12 @@ public class CommentServiceImpl implements ICommentService {
         if (null == contents) {
             throw new TipException("不存在的文章");
         }
+        //保存评论
         comments.setOwnerId(contents.getAuthorId());
         comments.setCreated(DateUtils.getCurrentUnixTime());
         commentMapper.insertSelective(comments);
 
+        //更新文章数据
         ContentVo temp = new ContentVo();
         temp.setCid(contents.getCid());
         temp.setCommentsNum(contents.getCommentsNum() + 1);

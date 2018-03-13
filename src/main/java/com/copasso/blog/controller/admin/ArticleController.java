@@ -1,6 +1,5 @@
 package com.copasso.blog.controller.admin;
 
-
 import com.github.pagehelper.PageInfo;
 import com.copasso.blog.controller.BaseController;
 import com.copasso.blog.dto.LogActions;
@@ -26,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by 13 on 2017/2/21.
+ * 文章管理Controller
  */
 @Controller
 @RequestMapping("/admin/article")

@@ -22,21 +22,21 @@ public class AttachServiceImpl implements IAttachService {
     private static final Logger LOGGER = LoggerFactory.getLogger(AttachServiceImpl.class);
 
     @Resource
-    private AttachVoMapper attachDao;
+    private AttachVoMapper attachMapper;
 
     @Override
     public PageInfo<AttachVo> getAttachs(Integer page, Integer limit) {
         PageHelper.startPage(page, limit);
         AttachVoExample attachVoExample = new AttachVoExample();
         attachVoExample.setOrderByClause("id desc");
-        List<AttachVo> attachVos = attachDao.selectByExample(attachVoExample);
+        List<AttachVo> attachVos = attachMapper.selectByExample(attachVoExample);
         return new PageInfo<>(attachVos);
     }
 
     @Override
     public AttachVo selectById(Integer id) {
         if(null != id){
-            return attachDao.selectByPrimaryKey(id);
+            return attachMapper.selectByPrimaryKey(id);
         }
         return null;
     }
@@ -49,13 +49,13 @@ public class AttachServiceImpl implements IAttachService {
         attach.setFkey(fkey);
         attach.setFtype(ftype);
         attach.setCreated(DateUtils.getCurrentUnixTime());
-        attachDao.insertSelective(attach);
+        attachMapper.insertSelective(attach);
     }
 
     @Override
     public void deleteById(Integer id) {
         if (null != id) {
-            attachDao.deleteByPrimaryKey( id);
+            attachMapper.deleteByPrimaryKey( id);
         }
     }
 }
