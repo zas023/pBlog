@@ -177,6 +177,7 @@ public class IndexController extends BaseController {
             return RestResponseBo.fail(ErrorCode.BAD_REQUEST);
         }
 
+        //判断token令牌是否过期
         String token = cache.hget(Types.CSRF_TOKEN.getType(), _csrf_token);
         if (StringUtils.isBlank(token)) {
             return RestResponseBo.fail(ErrorCode.BAD_REQUEST);

@@ -45,7 +45,7 @@ public class BaseInterceptor implements HandlerInterceptor {
         LOGGE.info("用户访问地址: {}, 来路地址: {}", uri, IPUtils.getIpAddrByRequest(request));
 
 
-        //请求拦截处理
+        //请求拦截处理(检测登陆用户)
         UserVo user = BlogUtils.getLoginUser(request);
         if (null == user) {
             Integer uid = BlogUtils.getCookieUid(request);
@@ -55,12 +55,14 @@ public class BaseInterceptor implements HandlerInterceptor {
                 request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
             }
         }
+        //当请求为/admin时，判断是否有登陆用户，无则跳转登陆界面
         if (uri.startsWith("/admin") && !uri.startsWith("/admin/login") && null == user) {
             response.sendRedirect(request.getContextPath() + "/admin/login");
             return false;
         }
         //设置get请求的token
         if (request.getMethod().equals("GET")) {
+            //生成token
             String csrf_token = UUID.UU64();
             // 默认存储30分钟
             cache.hset(Types.CSRF_TOKEN.getType(), csrf_token, uri, 30 * 60);

@@ -1,6 +1,5 @@
 package com.copasso.blog.interceptor;
 
-
 import com.copasso.blog.utils.BlogUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -11,7 +10,6 @@ import javax.annotation.Resource;
 
 /**
  * 向mvc中添加自定义组件
- * Created by BlueT on 2017/3/9.
  */
 @Component
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
