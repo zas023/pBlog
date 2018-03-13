@@ -81,7 +81,8 @@ public class IndexController extends BaseController {
      * @return 主页
      */
     @GetMapping(value = "page/{p}")
-    public String index(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
+    public String index(HttpServletRequest request, @PathVariable int p,
+                        @RequestParam(value = "limit", defaultValue = "12") int limit) {
         p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
         PageInfo<ContentVo> articles = contentService.getContents(p, limit);
         request.setAttribute("articles", articles);
@@ -132,7 +133,7 @@ public class IndexController extends BaseController {
     }
 
     /**
-     * 抽取公共方法
+     * 获取文章详情页的评论
      *
      * @param request
      * @param contents
@@ -207,9 +208,11 @@ public class IndexController extends BaseController {
             return RestResponseBo.fail("您发表评论太快了，请过会再试");
         }
 
+        //替换HTML脚本
         author = BlogUtils.cleanXSS(author);
         text = BlogUtils.cleanXSS(text);
 
+        //表情处理
         author = EmojiParser.parseToAliases(author);
         text = EmojiParser.parseToAliases(text);
 
@@ -232,7 +235,7 @@ public class IndexController extends BaseController {
             }
             // 设置对每个文章1分钟可以评论一次
             cache.hset(Types.COMMENTS_FREQUENCY.getType(), val, 1, 60);
-            return RestResponseBo.ok();
+            return RestResponseBo.success();
         } catch (Exception e) {
             String msg = "评论发布失败";
             if (e instanceof TipException) {

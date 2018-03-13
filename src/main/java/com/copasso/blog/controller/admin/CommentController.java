@@ -75,7 +75,7 @@ public class CommentController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     @PostMapping(value = "status")
@@ -96,7 +96,7 @@ public class CommentController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     /**
@@ -136,7 +136,7 @@ public class CommentController extends BaseController {
         comment.setParent(coid);
         try {
             commentsService.insertComment(comment);
-            return RestResponseBo.ok();
+            return RestResponseBo.success();
         } catch (Exception e) {
             String msg = "回复失败";
             if (e instanceof TipException) {

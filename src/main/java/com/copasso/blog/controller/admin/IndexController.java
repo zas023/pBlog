@@ -108,7 +108,7 @@ public class IndexController extends BaseController {
             original.setEmail(email);
             session.setAttribute(WebConst.LOGIN_SESSION_KEY, original);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     /**
@@ -142,7 +142,7 @@ public class IndexController extends BaseController {
             UserVo original= (UserVo)session.getAttribute(WebConst.LOGIN_SESSION_KEY);
             original.setPassword(pwd);
             session.setAttribute(WebConst.LOGIN_SESSION_KEY,original);
-            return RestResponseBo.ok();
+            return RestResponseBo.success();
         } catch (Exception e){
             String msg = "密码修改失败";
             if (e instanceof TipException) {

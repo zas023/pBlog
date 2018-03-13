@@ -97,7 +97,7 @@ public class AttachController extends BaseController {
         } catch (Exception e) {
             return RestResponseBo.fail();
         }
-        return RestResponseBo.ok(errorFiles);
+        return RestResponseBo.success(errorFiles);
     }
 
     /**
@@ -122,7 +122,7 @@ public class AttachController extends BaseController {
             else LOGGER.error(msg, e);
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
 }

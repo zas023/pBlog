@@ -68,7 +68,7 @@ public class LinksController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     @RequestMapping(value = "delete")
@@ -86,7 +86,7 @@ public class LinksController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
 }

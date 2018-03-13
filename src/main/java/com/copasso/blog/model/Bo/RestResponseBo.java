@@ -106,19 +106,19 @@ public class RestResponseBo<T> {
         this.timestamp = timestamp;
     }
 
-    public static RestResponseBo ok() {
+    public static RestResponseBo success() {
         return new RestResponseBo(true);
     }
 
-    public static <T> RestResponseBo ok(T payload) {
+    public static <T> RestResponseBo success(T payload) {
         return new RestResponseBo(true, payload);
     }
 
-    public static <T> RestResponseBo ok(int code) {
+    public static <T> RestResponseBo success(int code) {
         return new RestResponseBo(true, null, code);
     }
 
-    public static <T> RestResponseBo ok(T payload, int code) {
+    public static <T> RestResponseBo success(T payload, int code) {
         return new RestResponseBo(true, payload, code);
     }
 

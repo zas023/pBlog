@@ -98,14 +98,12 @@ public class ContentServiceImpl implements IContentService {
 
     @Override
     public PageInfo<ContentVo> getContents(Integer p, Integer limit) {
-        LOGGER.debug("Enter getContents method");
         ContentVoExample example = new ContentVoExample();
         example.setOrderByClause("created desc");
         example.createCriteria().andTypeEqualTo(Types.ARTICLE.getType()).andStatusEqualTo(Types.PUBLISH.getType());
         PageHelper.startPage(p, limit);
         List<ContentVo> data = contentMapper.selectByExampleWithBLOBs(example);
         PageInfo<ContentVo> pageInfo = new PageInfo<>(data);
-        LOGGER.debug("Exit getContents method");
         return pageInfo;
     }
 

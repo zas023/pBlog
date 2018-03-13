@@ -58,7 +58,7 @@ public class CategoryController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     /**
@@ -81,7 +81,7 @@ public class CategoryController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
 }

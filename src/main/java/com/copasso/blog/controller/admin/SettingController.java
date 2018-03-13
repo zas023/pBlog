@@ -77,7 +77,7 @@ public class SettingController extends BaseController {
                 BaseController.THEME = "themes/" + site_theme;
             }
             logService.insertLog(LogActions.SYS_SETTING.getAction(), GsonUtils.toJsonString(querys), request.getRemoteAddr(), this.getUid(request));
-            return RestResponseBo.ok();
+            return RestResponseBo.success();
         } catch (Exception e) {
             String msg = "保存设置失败";
             if (e instanceof TipException) {
@@ -106,7 +106,7 @@ public class SettingController extends BaseController {
         try {
             BackResponseBo backResponse = siteService.backup(bk_type, bk_path, "yyyyMMddHHmm");
             logService.insertLog(LogActions.SYS_BACKUP.getAction(), null, request.getRemoteAddr(), this.getUid(request));
-            return RestResponseBo.ok(backResponse);
+            return RestResponseBo.success(backResponse);
         } catch (Exception e) {
             String msg = "备份失败";
             if (e instanceof TipException) {

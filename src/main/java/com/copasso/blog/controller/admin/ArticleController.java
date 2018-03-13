@@ -116,7 +116,7 @@ public class ArticleController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     /**
@@ -143,7 +143,7 @@ public class ArticleController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     /**
@@ -168,6 +168,6 @@ public class ArticleController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 }

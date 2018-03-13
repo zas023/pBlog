@@ -91,7 +91,7 @@ public class PageController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     @PostMapping(value = "modify")
@@ -128,7 +128,7 @@ public class PageController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 
     @RequestMapping(value = "delete")
@@ -147,6 +147,6 @@ public class PageController extends BaseController {
             }
             return RestResponseBo.fail(msg);
         }
-        return RestResponseBo.ok();
+        return RestResponseBo.success();
     }
 }
