@@ -6,25 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b91b04a0-da71-4d10-9b47-4aa22dab9bdc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/ArticleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/ArticleController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/AttachController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/AttachController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/AuthController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/AuthController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/CategoryController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/CommentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/CommentController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/IndexController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/LinksController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/LinksController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/PageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/PageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/SettingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/controller/admin/SettingController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/ICommentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/ICommentService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/IMetaService.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/IMetaService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/AttachServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/AttachServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/CommentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/CommentServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/ContentServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/ContentServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/MetaServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/MetaServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/copasso/blog/service/impl/UserServiceImpl.java" />
-    </list>
+    <list default="true" id="b91b04a0-da71-4d10-9b47-4aa22dab9bdc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -495,12 +477,12 @@
       <workItem from="1520478918852" duration="12335000" />
       <workItem from="1520570045555" duration="8556000" />
       <workItem from="1520649603707" duration="689000" />
-      <workItem from="1520907132773" duration="3916000" />
+      <workItem from="1520907132773" duration="4517000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72483000" />
+    <option name="totallyTimeSpent" value="73084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
