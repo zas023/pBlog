@@ -17,6 +17,12 @@ import javax.annotation.Resource;
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Resource
     private BaseInterceptor baseInterceptor;
+
+    /**
+     * 添加拦截器
+     *
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(baseInterceptor);
@@ -24,11 +30,12 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 添加静态资源文件，外部可以直接访问地址
+     *
      * @param registry
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/upload/**").addResourceLocations("file:"+ BlogUtils.getUplodFilePath()+"upload/");
+        registry.addResourceHandler("/upload/**").addResourceLocations("file:" + BlogUtils.getUplodFilePath() + "upload/");
         super.addResourceHandlers(registry);
     }
 }

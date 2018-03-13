@@ -201,9 +201,9 @@ public class IndexController extends BaseController {
         if (text.length() > 200) {
             return RestResponseBo.fail("请输入200个字符以内的评论");
         }
-
-        String val = IPUtils.getIpAddrByRequest(request) + ":" + cid;
-        Integer count = cache.hget(Types.COMMENTS_FREQUENCY.getType(), val);
+        //缓存域
+        String field = IPUtils.getIpAddrByRequest(request) + ":" + cid;
+        Integer count = cache.hget(Types.COMMENTS_FREQUENCY.getType(), field);
         if (null != count && count > 0) {
             return RestResponseBo.fail("您发表评论太快了，请过会再试");
         }
@@ -234,7 +234,7 @@ public class IndexController extends BaseController {
                 cookie("tale_remember_url", URLEncoder.encode(url, "UTF-8"), 7 * 24 * 60 * 60, response);
             }
             // 设置对每个文章1分钟可以评论一次
-            cache.hset(Types.COMMENTS_FREQUENCY.getType(), val, 1, 60);
+            cache.hset(Types.COMMENTS_FREQUENCY.getType(), field, 1, 60);
             return RestResponseBo.success();
         } catch (Exception e) {
             String msg = "评论发布失败";
