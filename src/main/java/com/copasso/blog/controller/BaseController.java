@@ -2,7 +2,7 @@ package com.copasso.blog.controller;
 
 import com.copasso.blog.model.Vo.UserVo;
 import com.copasso.blog.utils.BlogUtils;
-import com.copasso.blog.utils.MapCache;
+import com.copasso.blog.utils.CacheMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,7 +13,7 @@ public abstract class BaseController {
 
     public static String THEME = "themes/default";
 
-    protected MapCache cache = MapCache.single();
+    protected CacheMap cache = CacheMap.single();
 
     /**
      * 主页的页面主题

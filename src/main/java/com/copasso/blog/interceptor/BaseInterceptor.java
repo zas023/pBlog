@@ -28,7 +28,7 @@ public class BaseInterceptor implements HandlerInterceptor {
     @Resource
     private IUserService userService;
 
-    private MapCache cache = MapCache.single();
+    private CacheMap cache = CacheMap.single();
 
     @Resource
     private Commons commons;
@@ -64,7 +64,7 @@ public class BaseInterceptor implements HandlerInterceptor {
         if (request.getMethod().equals("GET")) {
             //生成token
             String csrf_token = UUID.UU64();
-            // 默认存储30分钟
+            //默认存储30分钟
             cache.hset(Types.CSRF_TOKEN.getType(), csrf_token, uri, 30 * 60);
             request.setAttribute("_csrf_token", csrf_token);
         }
