@@ -306,7 +306,7 @@ public class IndexController extends BaseController {
     /**
      * 自定义页面,如关于的页面
      */
-    @GetMapping(value = "/{pagename}")
+    @GetMapping(value = "page/{pagename}")
     public String page(@PathVariable String pagename, HttpServletRequest request) {
         ContentVo contents = contentService.getContents(pagename);
         if (null == contents) {

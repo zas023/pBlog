@@ -67,6 +67,15 @@ public class IndexController extends BaseController {
     }
 
     /**
+     * 网站主要信息
+     * @return
+     */
+    @GetMapping(value = {"/main"})
+    public String main(HttpServletRequest request){
+        return "admin/main";
+    }
+
+    /**
      * 个人设置页面
      */
     @GetMapping(value = "profile")
