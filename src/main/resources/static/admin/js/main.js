@@ -35,21 +35,21 @@ layui.config({
 	)
 
 	//图片总数
-	$.get("http://localhost:8080/admin/json/images.json",
+	$.get("/admin/json/images.json",
 		function(data){
 			$(".imgAll span").text(data.length);
 		}
 	)
 
 	//用户数
-	$.get("http://localhost:8080/admin/json/usersList.json",
+	$.get("/admin/json/usersList.json",
 		function(data){
 			$(".userAll span").text(data.length);
 		}
 	)
 
 	//新消息
-	$.get("http://localhost:8080/admin/json/message.json",
+	$.get("/admin/json/message.json",
 		function(data){
 			$(".newMessage span").text(data.length);
 		}
@@ -67,7 +67,7 @@ layui.config({
 		fillParameter(systemParameter);
 	}else{
 		$.ajax({
-			url : "http://localhost:8080/admin/json/systemParameter.json",
+			url : "/admin/json/systemParameter.json",
 			type : "get",
 			dataType : "json",
 			success : function(data){

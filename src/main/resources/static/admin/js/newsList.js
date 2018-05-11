@@ -43,7 +43,7 @@ layui.config({
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
             	$.ajax({
-					url : "../../json/newsList.json",
+					url : "/admin/json/newsList.json",
 					type : "get",
 					dataType : "json",
 					success : function(data){
@@ -111,7 +111,7 @@ layui.config({
 		var index = layui.layer.open({
 			title : "添加文章",
 			type : 2,
-			content : "newsAdd.html",
+			content : "/admin/article/publish",
 			success : function(layero, index){
 				layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
 					tips: 3

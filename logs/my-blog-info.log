@@ -2112,3 +2112,214 @@ java.lang.NullPointerException
 2018-05-11 22:42:24.827 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
 2018-05-11 22:42:24.835 [http-nio-8080-exec-7] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
 2018-05-11 22:42:24.835 [http-nio-8080-exec-7] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 22:45:43.523 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 22:45:43.523 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 22:45:43.637 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 22:45:43.637 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 22:45:43.664 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 22:45:43.664 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 22:45:43.684 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 22:45:43.684 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 22:45:43.696 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 22:45:43.696 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 22:49:33.851 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 22:49:33.852 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 22:49:33.973 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 22:49:33.973 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 22:49:34.000 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 22:49:34.000 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 22:49:34.017 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 22:49:34.017 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 22:49:34.031 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 22:49:34.032 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 22:52:45.744 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 22:52:45.744 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 22:52:45.921 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 22:52:45.921 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 22:52:45.949 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 22:52:45.949 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 22:52:45.972 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 22:52:45.972 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 22:52:45.981 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 22:52:45.981 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 22:53:38.947 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 22:53:38.947 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 22:53:39.105 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 22:53:39.105 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 22:53:39.132 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 22:53:39.132 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 22:53:39.147 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 22:53:39.148 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 22:53:39.156 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 22:53:39.157 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 22:55:14.809 [http-nio-8080-exec-5] ERROR com.copasso.blog.controller.GlobalExceptionHandler - find exception:e=null
+2018-05-11 22:56:45.618 [http-nio-8080-exec-5] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 22:56:45.618 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 22:56:45.629 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 22:56:45.629 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 22:56:45.635 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 22:56:45.635 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 22:56:45.646 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 22:56:45.646 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 22:56:45.650 [http-nio-8080-exec-5] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 22:56:45.650 [http-nio-8080-exec-5] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:02:50.064 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:02:50.065 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:02:50.365 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:02:50.365 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:02:50.437 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:02:50.437 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:02:50.459 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:02:50.460 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:02:50.470 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:02:50.470 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:03:09.430 [http-nio-8080-exec-6] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:03:09.430 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:03:09.439 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:03:09.440 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:03:09.456 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:03:09.456 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:03:09.470 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:03:09.470 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:03:09.482 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:03:09.482 [http-nio-8080-exec-6] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:03:50.125 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:03:50.125 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:03:50.382 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:03:50.382 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:03:50.407 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:03:50.407 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:03:50.427 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:03:50.427 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:03:50.436 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:03:50.436 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:05:37.854 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:05:37.854 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:05:38.010 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:05:38.010 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:05:38.037 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:05:38.037 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:05:38.052 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:05:38.052 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:05:38.060 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:05:38.060 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:07:17.706 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:07:17.707 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:07:17.842 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:07:17.842 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:07:17.873 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:07:17.873 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:07:17.892 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:07:17.892 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:07:17.899 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:07:17.899 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:20:21.377 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:20:21.377 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:20:21.496 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:20:21.496 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:20:21.544 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:20:21.544 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:20:21.574 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:20:21.574 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:20:21.588 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:20:21.588 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:20:54.304 [http-nio-8080-exec-6] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:20:54.304 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:20:54.313 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:20:54.313 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:20:54.332 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:20:54.332 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:20:54.346 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:20:54.346 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:20:54.352 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:20:54.352 [http-nio-8080-exec-6] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:22:06.927 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:22:06.927 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:22:07.109 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:22:07.109 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:22:07.169 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:22:07.169 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:22:07.199 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:22:07.199 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:22:07.211 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:22:07.211 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:23:20.127 [http-nio-8080-exec-3] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:23:20.127 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:23:20.136 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:23:20.136 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:23:20.151 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:23:20.151 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:23:20.165 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:23:20.165 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:23:20.173 [http-nio-8080-exec-3] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:23:20.173 [http-nio-8080-exec-3] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:25:39.451 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:25:39.452 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:25:39.605 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:25:39.605 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:25:39.633 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:25:39.633 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:25:39.651 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:25:39.651 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:25:39.662 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:25:39.662 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:26:35.252 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:26:35.253 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:26:35.381 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:26:35.381 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:26:35.405 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:26:35.405 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:26:35.423 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:26:35.424 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:26:35.431 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:26:35.432 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:27:07.558 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:27:07.558 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:27:07.699 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:27:07.699 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:27:07.731 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:27:07.731 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:27:07.748 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:27:07.748 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:27:07.755 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:27:07.755 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:28:04.738 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:28:04.739 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:28:04.868 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:28:04.868 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:28:04.899 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:28:04.899 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:28:04.917 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:28:04.917 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:28:04.924 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:28:04.924 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:28:16.640 [http-nio-8080-exec-10] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:28:16.640 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:28:16.650 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:28:16.650 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:28:16.660 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:28:16.660 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:28:16.671 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:28:16.671 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:28:16.675 [http-nio-8080-exec-10] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:28:16.675 [http-nio-8080-exec-10] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:28:35.966 [http-nio-8080-exec-6] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:28:35.966 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:28:35.973 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:28:35.973 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:28:35.984 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:28:35.984 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:28:35.999 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:28:35.999 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:28:36.010 [http-nio-8080-exec-6] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:28:36.010 [http-nio-8080-exec-6] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
+2018-05-11 23:30:00.382 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Enter admin index method
+2018-05-11 23:30:00.382 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentComments method:limit=5
+2018-05-11 23:30:00.392 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentComments method
+2018-05-11 23:30:00.392 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter recentContents method
+2018-05-11 23:30:00.407 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit recentContents method
+2018-05-11 23:30:00.407 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Enter getStatistics method
+2018-05-11 23:30:00.422 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.SiteServiceImpl - Exit getStatistics method
+2018-05-11 23:30:00.422 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Enter getLogs method:page=1,linit=5
+2018-05-11 23:30:00.431 [http-nio-8080-exec-1] DEBUG com.copasso.blog.service.impl.LogServiceImpl - Exit getLogs method
+2018-05-11 23:30:00.431 [http-nio-8080-exec-1] INFO  com.copasso.blog.controller.admin.IndexController - Exit admin index method
