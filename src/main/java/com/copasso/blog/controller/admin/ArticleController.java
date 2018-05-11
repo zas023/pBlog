@@ -96,6 +96,7 @@ public class ArticleController extends BaseController {
      */
     @GetMapping(value = "/list")
     @ResponseBody
+    @Transactional(rollbackFor = TipException.class)
     public RestResponseBo getArticles() {
         ContentVoExample contentVoExample = new ContentVoExample();
         contentVoExample.setOrderByClause("created desc");
@@ -103,7 +104,8 @@ public class ArticleController extends BaseController {
         PageInfo<ContentVo> pageInfo = contentsService.getArticlesWithpage(contentVoExample,1,1000);
         RestResponseBo<List<ContentVo>> responseBo=new RestResponseBo();
         responseBo.setPayload(pageInfo.getList());
-        return responseBo.success();
+        responseBo.setSuccess(true);
+        return responseBo;
     }
 
     /**
