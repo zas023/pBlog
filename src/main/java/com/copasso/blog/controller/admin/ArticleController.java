@@ -89,6 +89,23 @@ public class ArticleController extends BaseController {
         return "admin/article_edit";
     }
 
+    /******************************restful******************************/
+    /**
+     * 获取所有文章
+     * @return
+     */
+    @GetMapping(value = "/list")
+    @ResponseBody
+    public RestResponseBo getArticles() {
+        ContentVoExample contentVoExample = new ContentVoExample();
+        contentVoExample.setOrderByClause("created desc");
+        contentVoExample.createCriteria().andTypeEqualTo(Types.ARTICLE.getType());
+        PageInfo<ContentVo> pageInfo = contentsService.getArticlesWithpage(contentVoExample,1,1000);
+        RestResponseBo<List<ContentVo>> responseBo=new RestResponseBo();
+        responseBo.setPayload(pageInfo.getList());
+        return responseBo.success();
+    }
+
     /**
      * 文章发表
      * @param contents
