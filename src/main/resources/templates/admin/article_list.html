@@ -10,10 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" th:href="@{/admin/favicon.ico}"/>
-    <link rel="stylesheet" th:href="@{/admin/layui/css/layui.css}" media="all" />
-    <link rel="stylesheet" th:href="@{/admin/css/font_eolqem241z66flxr.css}" media="all" />
-    <link rel="stylesheet" th:href="@{/admin/css/main.css}" media="all" />
+    <link rel="icon" href="/admin/favicon.ico"/>
+    <link rel="stylesheet" href="/admin/plugins/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="/admin/css/font_eolqem241z66flxr.css" media="all" />
+    <link rel="stylesheet" href="/admin/css/main.css" media="all" />
 </head>
 <body class="childrenBody">
 <blockquote class="layui-elem-quote news_search">
@@ -55,10 +55,10 @@
         <tr>
             <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose"/></th>
             <th style="text-align:left;">文章标题</th>
-            <th>发布人</th>
-            <th>审核状态</th>
-            <th>浏览权限</th>
-            <th>是否展示</th>
+            <th>浏览量</th>
+            <th>发布状态</th>
+            <th>所属分类</th>
+            <th>允许评论</th>
             <th>发布时间</th>
             <th>操作</th>
         </tr>
@@ -67,7 +67,7 @@
     </table>
 </div>
 <div id="page"></div>
-<script type="text/javascript" th:src="@{/admin/layui/layui.js}"></script>
-<script type="text/javascript" th:src="@{/admin/js/newsList.js}"></script>
+<script type="text/javascript" src="/admin/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="/admin/js/articleList.js"></script>
 </body>
 </html>
