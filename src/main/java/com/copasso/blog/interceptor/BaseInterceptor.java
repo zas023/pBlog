@@ -56,10 +56,10 @@ public class BaseInterceptor implements HandlerInterceptor {
             }
         }
         //当请求为/admin时，判断是否有登陆用户，无则跳转登陆界面
-//        if (uri.startsWith("/admin") && !uri.startsWith("/admin/login") && null == user) {
-//            response.sendRedirect(request.getContextPath() + "/admin/login");
-//            return false;
-//        }
+        if (uri.startsWith("/admin") && !uri.startsWith("/admin/login") && null == user) {
+            response.sendRedirect(request.getContextPath() + "/admin/login");
+            return false;
+        }
         //设置get请求的token
         if (request.getMethod().equals("GET")) {
             //生成token
