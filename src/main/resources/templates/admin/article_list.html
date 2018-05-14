@@ -1,73 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8"/>
-    <title>文章列表--后台管理</title>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" href="/admin/favicon.ico"/>
-    <link rel="stylesheet" href="/admin/plugins/layui/css/layui.css" media="all" />
-    <link rel="stylesheet" href="/admin/css/font_eolqem241z66flxr.css" media="all" />
-    <link rel="stylesheet" href="/admin/css/main.css" media="all" />
-</head>
-<body class="childrenBody">
-<blockquote class="layui-elem-quote news_search">
-    <div class="layui-inline">
-        <div class="layui-input-inline">
-            <input type="text" value="" placeholder="请输入关键字" class="layui-input search_input"/>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='文章管理',active='article'">
+<header th:replace="admin/header::headerFragment(${title},${active})"></header>
+<body class="fixed-left">
+<div id="wrapper">
+    <div th:replace="admin/header::header-body"></div>
+    <div class="content-page">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">文章管理</h4>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th width="35%">文章标题</th>
+                                <th width="15%">发布时间</th>
+                                <th>浏览量</th>
+                                <th>所属分类</th>
+                                <th width="8%">发布状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <th:block th:each="post : ${articles.list}">
+                                <tr th:cid="${post.cid}">
+                                    <td>
+                                        <a th:href="@{'/admin/article/'+${post.cid}}" th:text="${post.title}"></a>
+                                    </td>
+                                    <td><th:block th:text="${commons.fmtdate(post.created, 'yyyy-MM-dd HH:mm:ss')}"/></td>
+                                    <td><th:block th:text="${post.hits}"/></td>
+                                    <td><th:block th:text="${post.categories}"/></td>
+                                    <td>
+                                        <th:block th:if="${post.status == 'publish'}">
+                                            <span class="label label-success">已发布</span>
+                                        </th:block>
+                                       <th:block th:if="${post.status == 'draft'}">
+                                           <span class="label label-default">草稿</span>
+                                       </th:block>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{'/admin/article/'+${post.cid}}"
+                                           class="btn btn-primary btn-sm waves-effect waves-light m-b-5"><i
+                                                class="fa fa-edit"></i> <span>编辑</span></a>
+                                        <a href="javascript:void(0)" th:onclick="'delPost('+${post.cid}+');'"
+                                           class="btn btn-danger btn-sm waves-effect waves-light m-b-5"><i
+                                                class="fa fa-trash-o"></i> <span>删除</span></a>
+                                        <a class="btn btn-warning btn-sm waves-effect waves-light m-b-5" th:href="${commons.permalink(post)}+'/preview'"
+                                           target="_blank"><i
+                                                class="fa fa-rocket"></i> <span>预览</span></a>
+                                    </td>
+                                </tr>
+                            </th:block>
+
+                            </tbody>
+                        </table>
+                        <div th:replace="comm/macros :: pageAdminNav(${articles})"></div>
+                    </div>
+                </div>
+                <div th:replace="admin/footer :: footer-content"></div>
+            </div>
         </div>
-        <a class="layui-btn search_btn">查询</a>
     </div>
-    <div class="layui-inline">
-        <a class="layui-btn layui-btn-normal newsAdd_btn">添加文章</a>
-    </div>
-    <div class="layui-inline">
-        <a class="layui-btn recommend" style="background-color:#5FB878">推荐文章</a>
-    </div>
-    <div class="layui-inline">
-        <a class="layui-btn audit_btn">审核文章</a>
-    </div>
-    <div class="layui-inline">
-        <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
-    </div>
-    <div class="layui-inline">
-        <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的文章外所有操作无效，关闭页面所有数据重置</div>
-    </div>
-</blockquote>
-<div class="layui-form news_list">
-    <table class="layui-table">
-        <colgroup>
-            <col width="50"/>
-            <col/>
-            <col width="9%"/>
-            <col width="9%"/>
-            <col width="9%"/>
-            <col width="9%"/>
-            <col width="9%"/>
-            <col width="15%"/>
-        </colgroup>
-        <thead>
-        <tr>
-            <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose"/></th>
-            <th style="text-align:left;">文章标题</th>
-            <th>浏览量</th>
-            <th>发布状态</th>
-            <th>所属分类</th>
-            <th>允许评论</th>
-            <th>发布时间</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody class="news_content"></tbody>
-    </table>
 </div>
-<div id="page"></div>
-<script type="text/javascript" src="/admin/plugins/layui/layui.js"></script>
-<script type="text/javascript" src="/admin/js/articleList.js"></script>
+<div th:replace="admin/footer :: footer"></div>
+<script type="text/javascript">
+    /*<![CDATA[*/
+    var tale = new $.tale();
+    function delPost(cid) {
+        tale.alertConfirm({
+            title:'确定删除该文章吗?',
+            then: function () {
+                tale.post({
+                    url : '/admin/article/delete',
+                    data: {cid: cid},
+                    success: function (result) {
+                        if(result && result.success){
+                            tale.alertOkAndReload('文章删除成功');
+                        } else {
+                            tale.alertError(result.msg || '文章删除失败');
+                        }
+                    }
+                });
+            }
+        });
+    }
+    /*]]>*/
+</script>
 </body>
 </html>

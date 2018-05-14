@@ -1,4 +1,4 @@
-var $,tab,skyconsWeather;
+var $,tab;
 layui.config({
 	base : "js/"
 }).use(['bodyTab','form','element','layer','jquery'],function(){
